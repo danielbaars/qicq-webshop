@@ -1,0 +1,76 @@
+$default-margin: 16px
+
+$h1: 48px
+$h2: 40px
+$h3: 31px
+$h4: 25px
+$h5: 20px
+$h6: 16px
+$h7: 12px
+
+@import colors
+
+=button($class, $bgc, $color: $white)
+  background-color: $bgc
+  color: $color
+  &:hover
+    background-color: darken($bgc, 10%)
+    color: $color
+
+.button
+  &.selected
+    +button('selected', $primary)
+  &.not-selected
+    +button('not-selected', $secondary)
+  &.primary
+    +button('primary', $primary)
+  &.secondary
+    +button('secondary', $secondary)
+  &.success
+    +button('success', $success)
+
+body
+  padding-top: $default-margin
+
+body, h1, h2, h3, h4, h5, h6
+  font-family: 'Lato', sans-serif
+
+.grid-container
+  //max-width: 64rem
+
+.product__info
+  margin-bottom: $default-margin
+
+.product__title
+  font-size: $h2
+  line-height: 1
+
+.product__summary,
+.product__visual,
+.product__options
+  margin-bottom: $default-margin
+
+.product__price
+  font-weight: bold
+  font-size: $h4
+  line-height: 1.1
+
+.product__checkbox
+  margin-bottom: 0
+
+.options__label
+  font-weight: bold
+  font-size: $h6
+
+.button
+  .main
+    font-weight: bold
+    font-size: $h6
+  .sub
+    display: block
+    margin-top: $default-margin / 2
+    font-size: $h7
+
+.product__order
+  .button
+    font-weight: bold

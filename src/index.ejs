@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  **NOTE:** This is a template for index.html. It uses ejs and htmlWebpackPlugin to generate a different index.html for each environment. htmlWebpackPlugin will dynamically add references to the scripts and styles that it bundles to this file. The generated bundles have hash-based filenames, so it's necessary to add the references dynamically.
+  For more info on ejs, see http://www.embeddedjs.com/. For examples of using it with htmlWebpackPlugin, see https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs
+  -->
+<head>
+  <!--
+    The htmlWebpackPlugin will parse the logic below so that trackJS is only added to the production version of index.html (since only webpack.config.prod.js provides the trackJS token)
+    This is an example of how to add features to index.html for only one environment.
+    To track JavaScript errors via TrackJS, sign up for a free trial at TrackJS.com and enter your token in /webpack.config.prod.js on line 55.
+   -->
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+  <script>window._trackJs = {token: '<%= htmlWebpackPlugin.options.trackJSToken %>'};</script>
+  <script src="https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js"></script>
+  <% } %>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8"/>
+  <title>React QonQer Webshop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div id="app" class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 cell"></div>
+    </div>
+  </div>
+</body>
+</html>
