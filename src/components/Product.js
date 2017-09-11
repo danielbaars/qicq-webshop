@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import cformat from '../utils/euroFormat';
 
-import AddToCart from './AddToCart';
+import AddToCart from '../containers/AddToCart';
 
 const product = {
   name: 'Stromer ST1 t',

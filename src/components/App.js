@@ -2,26 +2,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
-import { Switch } from 'react-router-dom';
-import ProductPage from '../containers/ProductPage';
-import AboutPage from './AboutPage';
+import { Switch, NavLink } from 'react-router-dom';
+import ProductPage from './ProductPage';
+import ShoppingCart from '../containers/ShoppingCart';
 import NotFoundPage from './NotFoundPage';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-          {' | '}
-          <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
-          {' | '}
-          <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
-        </div> */}
+        <div className="grid-container">
+          <div className="grid-x grid-margin-x">
+            <div className="small-12 cell">
+              <div className="shop__nav">
+                <NavLink exact to="/">Product</NavLink>
+                {/* <span className="divider">|</span> */}
+                <NavLink to="/cart">Shopping Cart</NavLink>
+              </div>
+            </div>
+          </div>
+        </div>
         <Switch>
           <Route exact path="/" component={ProductPage} />
-          {/* <Route path="/fuel-savings" component={FuelSavingsPage} /> */}
-          <Route path="/about" component={AboutPage} />
+          <Route path="/cart" component={ShoppingCart} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
