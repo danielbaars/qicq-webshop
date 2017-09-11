@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Switch } from 'react-router-dom';
 import Product from './Product';
-import FuelSavingsPage from '../containers/FuelSavingsPage';
+import ProductPage from '../containers/ProductPage';
 import AboutPage from './AboutPage';
 import NotFoundPage from './NotFoundPage';
 
@@ -20,8 +20,8 @@ class App extends React.Component {
           <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
         </div> */}
         <Switch>
-          <Route exact path="/" component={Product} />
-          <Route path="/fuel-savings" component={FuelSavingsPage} />
+          <Route exact path="/" component={ProductPage} />
+          {/* <Route path="/fuel-savings" component={FuelSavingsPage} /> */}
           <Route path="/about" component={AboutPage} />
           <Route component={NotFoundPage} />
         </Switch>
