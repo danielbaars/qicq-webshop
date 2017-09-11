@@ -6,3 +6,9 @@ export function addOrder(input) {
     payload: input
   }
 }
+
+export function emptyCart() {
+  return {
+    type: types.EMPTY_CART
+  }
+}

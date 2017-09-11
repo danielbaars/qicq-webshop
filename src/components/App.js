@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Switch } from 'react-router-dom';
-import Product from './Product';
 import ProductPage from '../containers/ProductPage';
 import AboutPage from './AboutPage';
 import NotFoundPage from './NotFoundPage';

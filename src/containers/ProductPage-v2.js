@@ -1,8 +1,10 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import { addOrder } from '../actions/index';
+import {bindActionCreators} from 'redux';
 import cformat from '../utils/euroFormat';
-
-import AddToCart from './AddToCart';
 
 const product = {
   name: 'Stromer ST1 t',
@@ -50,7 +52,7 @@ const productOptions = {
   }
 };
 
-class Product extends Component {
+class ProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,6 +64,13 @@ class Product extends Component {
       licensePlate: false,
       winterTyres: false
     };
+  }
+  testFunction() {
+    return _.map(frameSizes, item => {
+      return (
+        <a onClick={() => this.selectFrameSize(item.inches)} className={"button"} key={item.inches}> <span className="main">{item.inches}"</span><span className="sub">({item.riderHeight})</span></a>
+      );
+    });
   }
   renderFrameSizeButtons() {
     return _.map(frameSizes, item => {
@@ -104,31 +113,68 @@ class Product extends Component {
       price: this.calculatePrice()
     });
   }
+  renderCartData() {
+    return this.props.contents.map((item) => {
+      return (
+        <li key={_.uniqueId()}>{item.name} / {item.price}</li>
+      );
+
+    });
+  }
   render() {
+    // console.log(this.state.price);
     return (
-      <div>
-        <div className="product">
-          <div className="product__info">
-            <h1 className="product__title">{product.name}</h1>
-            <div className="product__summary">{product.summary}</div>
-            {/* <div className="product__visual"><img src={product.visual} /></div> */}
-            <div className="product__price">{this.state.price.cformat()}</div>
-          </div>
-          <div className="product__options">
-            <div className="product__frame-size">
-              <h3 className="options__label">Framemaat:</h3>
-              <div className="button-group">
-                {this.renderFrameSizeButtons()}
+      <div className="grid-container">
+        <div className="grid-x grid-margin-x">
+          <div className="small-12 medium-8 cell">
+            <div className="product">
+              <div className="product">
+                <div className="product__info">
+                  <h1 className="product__title">{product.name}</h1>
+                  <div className="product__summary">{product.summary}</div>
+                  <div className="product__visual"><img src={product.visual} /></div>
+                  <div className="test">{this.testFunction()}</div>
+                  {/* <div className="product__price">{this.state.price.cformat()}</div> */}
+                </div>
+                <div className="product__options">
+                  <div className="product__frame-size">
+                    <h3 className="options__label">Framemaat:</h3>
+                    <div className="button-group">
+                      {/* {this.renderFrameSizeButtons()} */}
+                    </div>
+                  </div>
+                  <h3 className="options__label">Andere opties:</h3>
+                  {/* {this.renderOtherOptions()} */}
+                </div>
+                <div className="product__order"><a className="button success large">Bestel nu</a></div>
               </div>
             </div>
-            <h3 className="options__label">Andere opties:</h3>
-            {this.renderOtherOptions()}
           </div>
-          <AddToCart product={product.name} frameSize={this.state.frameSize} totalPrice={this.state.price} />
+          <div className="small-12 medium-4 cell">
+            <div className="card">
+              <div className="card-divider">Shopping Cart</div>
+              <div className="card-section">
+                <ul>
+                  {this.renderCartData()}
+                </ul>
+                <a onClick={() => this.props.addOrder({name: 'Stromer ST1 t', price: 3490})} className="button">Add Order</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+  return {
+    contents: state.cartContents
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ addOrder }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);
