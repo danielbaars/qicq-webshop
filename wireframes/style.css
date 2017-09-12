@@ -67,6 +67,11 @@ body, h1, h2, h3, h4, h5, h6 {
 .product__options {
   margin-bottom: 16px; }
 
+.product__visual {
+  height: 312px; }
+  .product__visual img {
+    max-height: 100%; }
+
 .product__price {
   font-weight: bold;
   font-size: 25px;
@@ -100,5 +105,27 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .cart__empty {
   color: #868e96; }
+
+.cart__item .name,
+.cart__item .price {
+  display: inline-block; }
+
+.cart__item .name {
+  width: 66.66667%; }
+
+.cart__item .price {
+  width: 33.33333%; }
+
+.cart__main-product {
+  font-size: 20px;
+  margin-bottom: 4px; }
+
+.cart__options {
+  margin-bottom: 16px; }
+
+.cart__total-price {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

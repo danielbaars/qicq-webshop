@@ -4,11 +4,23 @@ import cformat from '../utils/euroFormat';
 
 import AddToCart from '../containers/AddToCart';
 
-const product = {
-  name: 'Stromer ST1 t',
-  summary: 'De stijlvolle Audi bruin gespoten ST1 speed pedelec biedt een bijzondere rij-ervaring dankzij de vernieuwende Speed Drive, ontwikkeld door Schlumpf.',
-  visual: 'https://static.webshopapp.com/shops/029847/files/042614420/stromer-stromer-st1-t.jpg',
-  price: 3490
+const mainProducts = {
+  st1t: {
+    id: 'st1t',
+    name: 'Stromer ST1 t',
+    summary: 'De stijlvolle Audi bruin gespoten ST1 speed pedelec biedt een bijzondere rij-ervaring dankzij de vernieuwende Speed Drive, ontwikkeld door Schlumpf.',
+    visual: 'https://static.webshopapp.com/shops/029847/files/042614420/stromer-stromer-st1-t.jpg',
+    price: 3490,
+    options: productOptions
+  },
+  st2s: {
+    id: 'st2s',
+    name: 'Stromer ST2 S',
+    summary: 'De Stromer ST2, maar dan uitgebreid met een super sterke 983Wh accu. De eerste speed pedelec met elektrische schakelen, en een super krachtige lichtset en remlicht.',
+    visual: 'https://static.webshopapp.com/shops/029847/files/044440544/stromer-stromer-st2-s.jpg',
+    price: 8990,
+    options: productOptions
+  }
 };
 
 const frameSizes = {
@@ -50,18 +62,29 @@ const productOptions = {
   }
 };
 
+const initialState = {
+  price: 0,
+  frameSize: 20,
+  seatPost: false,
+  frontSuspension: false,
+  lock: false,
+  licensePlate: false,
+  winterTyres: false
+}
+
 class Product extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      price: product.price,
-      frameSize: 20,
-      seatPost: false,
-      frontSuspension: false,
-      lock: false,
-      licensePlate: false,
-      winterTyres: false
-    };
+    this.state = initialState;
+  }
+  componentDidMount() {
+    this.setState({
+      price: mainProducts[this.props.productId].price
+    });
+  }
+  componentWillReceiveProps(nextProps) {
+    const newValues = {price: mainProducts[nextProps.productId].price};
+    this.setState({...initialState, ...newValues});
   }
   renderFrameSizeButtons() {
     return _.map(frameSizes, item => {
@@ -94,9 +117,9 @@ class Product extends Component {
     if ( _.some(productOptions, item => this.state[item.id]) ) {
       return _.filter(productOptions, item => {
         return this.state[item.id];
-      }).map((item) => item.price).reduce((total, num) => total + num ) + product.price;
+      }).map((item) => item.price).reduce((total, num) => total + num ) + mainProducts[this.props.productId].price;
     } else {
-      return product.price;
+      return mainProducts[this.props.productId].price;
     }
   }
   setPrice() {
@@ -104,14 +127,20 @@ class Product extends Component {
       price: this.calculatePrice()
     });
   }
+  selectedOptions() {
+    return _.filter(productOptions, item => {
+      return this.state[item.id];
+    });
+  }
   render() {
+    let id = this.props.productId;
     return (
       <div>
         <div className="product">
           <div className="product__info">
-            <h1 className="product__title">{product.name}</h1>
-            <div className="product__summary">{product.summary}</div>
-            {/* <div className="product__visual"><img src={product.visual} /></div> */}
+            <h1 className="product__title">{mainProducts[id].name}</h1>
+            <div className="product__summary">{mainProducts[id].summary}</div>
+            {/* <div className="product__visual"><img src={mainProducts[id].visual} /></div> */}
             <div className="product__price">{this.state.price.cformat()}</div>
           </div>
           <div className="product__options">
@@ -124,7 +153,7 @@ class Product extends Component {
             <h3 className="options__label">Andere opties:</h3>
             {this.renderOtherOptions()}
           </div>
-          <AddToCart product={product.name} frameSize={this.state.frameSize} totalPrice={this.state.price} />
+          <AddToCart product={mainProducts[id].name} frameSize={this.state.frameSize} options={this.selectedOptions()} price={mainProducts[id].price} />
         </div>
       </div>
     );

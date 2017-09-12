@@ -63,6 +63,11 @@ body, h1, h2, h3, h4, h5, h6
 .product__options
   margin-bottom: $default-margin
 
+.product__visual
+  height: 312px
+  img
+    max-height: 100%
+
 .product__price
   font-weight: bold
   font-size: $h4
@@ -97,3 +102,24 @@ body, h1, h2, h3, h4, h5, h6
 
 .cart__empty
   color: $gray-600
+
+.cart__item
+  .name,
+  .price
+    display: inline-block
+  .name
+    width: 66.66667%
+  .price
+    width: 33.33333%
+
+.cart__main-product
+  font-size: $h5
+  margin-bottom: 4px
+
+.cart__options
+  margin-bottom: $default-margin
+
+.cart__total-price
+  margin-bottom: $default-margin
+  font-size: $h5
+  font-weight: bold

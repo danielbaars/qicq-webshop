@@ -1,16 +1,16 @@
 import React from 'react';
 import Product from './Product';
 
-const ProductPage = (props) => {
+const ProductsOverviewPage = () => {
   return (
     <div className="grid-container">
       <div className="grid-x grid-margin-x">
         <div className="small-12 medium-7 cell">
-          <Product productId={props.match.params.id} />
+          <h1>Hier komt een productoverzicht</h1>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductPage;
+export default ProductsOverviewPage;

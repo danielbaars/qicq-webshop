@@ -9,7 +9,7 @@ class AddToCart extends Component {
   render() {
     return (
       <div className="product__order">
-        <NavLink to="/cart" onClick={() => this.props.addOrder({name: this.props.product, size: this.props.frameSize, price: this.props.totalPrice})} className="button success large">Bestel nu</NavLink>
+        <NavLink to="/cart" onClick={() => this.props.addOrder({name: this.props.product, size: this.props.frameSize, options:this.props.options, price: this.props.price})} className="button success large">Bestel nu</NavLink>
       </div>
     );
   }

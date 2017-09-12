@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Switch, NavLink } from 'react-router-dom';
+import ProductsOverviewPage from './ProductsOverviewPage';
 import ProductPage from './ProductPage';
 import ShoppingCart from '../containers/ShoppingCart';
 import NotFoundPage from './NotFoundPage';
@@ -15,15 +16,17 @@ class App extends React.Component {
           <div className="grid-x grid-margin-x">
             <div className="small-12 cell">
               <div className="shop__nav">
-                <NavLink exact to="/">Product</NavLink>
-                {/* <span className="divider">|</span> */}
+                <NavLink exact to="/">Fietsen</NavLink>
+                <NavLink to="/products/st1t">Stromer ST1 t</NavLink>
+                <NavLink to="/products/st2s">Stromer ST2 S</NavLink>
                 <NavLink to="/cart">Shopping Cart</NavLink>
               </div>
             </div>
           </div>
         </div>
         <Switch>
-          <Route exact path="/" component={ProductPage} />
+          <Route exact path="/" component={ProductsOverviewPage} />
+          <Route path="/products/:id" component={ProductPage} />
           <Route path="/cart" component={ShoppingCart} />
           <Route component={NotFoundPage} />
         </Switch>
