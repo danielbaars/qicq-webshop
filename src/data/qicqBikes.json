@@ -1,0 +1,72 @@
+{
+  "stromer-st1-t" : {
+    "id" : "stromer-st1-t",
+    "brand" : "Stromer",
+    "model" : "ST1",
+    "type" : "t",
+    "summary" : "De stijlvolle Audi bruin gespoten ST1 speed pedelec biedt een bijzondere rij-ervaring dankzij de vernieuwende Speed Drive, ontwikkeld door Schlumpf.",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/042614420/stromer-stromer-st1-t.jpg",
+    "price" : 3490,
+    "maxSpeed" : 45
+  },
+  "stromer-st2-s" : {
+    "id" : "stromer-st2-s",
+    "brand" : "Stromer",
+    "model" : "ST2",
+    "type" : "S",
+    "summary" : "De Stromer ST2, maar dan uitgebreid met een super sterke 983Wh accu. De eerste speed pedelec met elektrische schakelen, en een super krachtige lichtset en remlicht.",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/044440544/stromer-stromer-st2-s.jpg",
+    "price" : 8990,
+    "maxSpeed" : 45
+  },
+  "stromer-st1-sport" : {
+    "id" : "stromer-st1-sport",
+    "brand" : "Stromer",
+    "model" : "ST1",
+    "type" : "sport",
+    "summary" : "Altijd al Stromer willen rijden, maar was het wat boven budget? Dan is dit je kans. Standaard met 522 wh accu, maar ook te upgraden naar 630 wh, zie bij andere opties",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/120904379/stromer-stromer-st1-sport.jpg",
+    "price" : 3190,
+    "maxSpeed" : 45
+  },
+  "stromer-st1-comfort" : {
+    "id" : "stromer-st1-comfort",
+    "brand" : "Stromer",
+    "model" : "ST1",
+    "type" : "comfort",
+    "summary" : "Altijd al Stromer willen rijden, maar was het wat boven budget? Dan is dit je kans. Standaard met 522 wh accu, maar ook te upgraden naar 630 wh, zie bij andere opties",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg",
+    "price" : 3190,
+    "maxSpeed" : 45
+  },
+  "stromer-st1-comfort-25km" : {
+    "id" : "stromer-st1-comfort-25km",
+    "brand" : "Stromer",
+    "model" : "ST1",
+    "type" : "comfort 25 km",
+    "summary" : "Een heerlijke ebike die ondersteunt tot 25 km/uur.Deze ebike is geen helmplicht, en je hebt geen kentekenplaatje nodig.",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg",
+    "price" : 2990,
+    "maxSpeed" : 25
+  },
+  "stromer-st2-sport" : {
+    "id" : "stromer-st2-sport",
+    "brand" : "Stromer",
+    "model" : "ST2",
+    "type" : "sport",
+    "summary" : "Droom jij ook al weg bij de gedachte van het hebben van een Stromer ST2? Ga voor design en Zwitserse degelijkheid. Deze speed pedelec is er voor jou en is future proof met geweldige handige en technische snufjes.",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/046194138/stromer-stromer-st2-sport.jpg",
+    "price" : 6030,
+    "maxSpeed" : 45
+  },
+  "stromer-st2-solar-impulse-ltd" : {
+    "id" : "stromer-st2-solar-impulse-ltd",
+    "brand" : "Stromer",
+    "model" : "ST2",
+    "type" : "Solar Impulse LTD",
+    "summary" : "Speed Pedelec. De Stromer ST2 Solar Impulse Limited edition 45km waar maar 399 modellen wereldwijd van zijn gemaakt.",
+    "visual" : "https://static.webshopapp.com/shops/029847/files/096074459/stromer-stromer-st2-solar-impulse-ltd.jpg",
+    "price" : 6990,
+    "maxSpeed" : 45
+  }
+}

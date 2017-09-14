@@ -17,8 +17,8 @@ class App extends React.Component {
             <div className="small-12 cell">
               <div className="shop__nav">
                 <NavLink exact to="/">Fietsen</NavLink>
-                <NavLink to="/products/st1t">Stromer ST1 t</NavLink>
-                <NavLink to="/products/st2s">Stromer ST2 S</NavLink>
+                <NavLink to="/products/stromer-st1-t">Stromer ST1 t</NavLink>
+                <NavLink to="/products/stromer-st2-s">Stromer ST2 S</NavLink>
                 <NavLink to="/cart">Shopping Cart</NavLink>
               </div>
             </div>

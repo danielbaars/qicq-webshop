@@ -7,6 +7,21 @@ export function addOrder(input) {
   }
 }
 
+export function removeProduct(index) {
+  return {
+    type: types.REMOVE_PRODUCT,
+    payload: index
+  }
+}
+
+export function removeOption(productIndex, optionIndex) {
+  return {
+    type: types.REMOVE_OPTION,
+    productIndex,
+    optionIndex
+  }
+}
+
 export function emptyCart() {
   return {
     type: types.EMPTY_CART
