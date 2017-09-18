@@ -10,7 +10,7 @@ $h7: 12px
 
 @import colors
 
-=button($class, $bgc, $color: $white)
+=button($bgc, $color: $white)
   background-color: $bgc
   color: $color
   &:hover
@@ -23,17 +23,24 @@ $h7: 12px
   .arrow-right
     border-left-color: $white
 
+=button-color($bgc, $color: $white)
+  background-color: $bgc
+  color: $color
+  &:hover
+    background-color: $bgc
+    color: $color
+
 .button
   &.selected
-    +button('selected', $primary)
+    +button($primary)
   &.not-selected
-    +button('not-selected', $secondary)
+    +button($secondary)
   &.primary
-    +button('primary', $primary)
+    +button($primary)
   &.secondary
-    +button('secondary', $secondary)
+    +button($secondary)
   &.success
-    +button('success', $success)
+    +button($success)
   .button-group &
     margin-right: 5px
   .arrow
@@ -44,6 +51,26 @@ $h7: 12px
     margin-right: 7px
   .arrow-right
     margin-left: 7px
+  &--color
+    $size: 3px
+    position: relative
+    top: $size
+    left: $size
+    margin-right: 5px + ($size * 2) !important
+    border: $size solid $white
+    outline: $size solid $white
+  &--black
+    +button-color($black)
+  &--white
+    +button-color($off-white, $black)
+  &--silver
+    +button-color($silver, $black)
+  &--audi-brown
+    +button-color($audi-brown)
+  &--green
+    +button-color($green)
+  &.chosen-color
+    outline: 3px solid $blue
 
 body
   padding-top: $default-margin + 8
@@ -80,6 +107,7 @@ body, h1, h2, h3, h4, h5, h6
   margin-bottom: $default-margin
 
 .product__visual
+  display: none
   height: 312px
   img
     max-height: 100%

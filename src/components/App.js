@@ -9,6 +9,9 @@ import ShoppingCart from '../containers/ShoppingCart';
 import NotFoundPage from './NotFoundPage';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
@@ -26,7 +29,7 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={ProductsOverviewPage} />
-          <Route path="/products/:id" component={ProductPage} />
+          <Route path='/products/:id' render={routeProps => <ProductPage {...routeProps} data={this.props.data} />} />
           <Route path="/cart" component={ShoppingCart} />
           <Route component={NotFoundPage} />
         </Switch>

@@ -16,14 +16,14 @@ class ShoppingCart extends Component {
           return(
             <div key={_.uniqueId()}>
               <div className="cart__item cart__main-product" key={_.uniqueId()}>
-                <span className="name">{item.name} ({item.size}")</span>
+                <span className="name">{item.name} ({item.color}, {item.size}")</span>
                 <span className="price">{item.price.cformat()}</span>
                 <span className="action"><a onClick={() => this.props.removeProduct(index)} className="cart__remove button alert tiny">X</a></span>
               </div>
               <div className="cart__options">
                 {item.options.map((item, i) => {
                   return (
-                    <div className="cart__item cart__option">
+                    <div className="cart__item cart__option" key={_.uniqueId()}>
                       <span className="name">+ {item.name}</span>
                       <span className="price">{item.price.cformat()}</span>
                       <span className="action"><a onClick={() => this.props.removeOption(index, i)} className="cart__remove button alert tiny">X</a></span>
@@ -55,7 +55,7 @@ class ShoppingCart extends Component {
     return (
       <div className="grid-container">
         <div className="grid-x grid-margin-x">
-          <div className="small-12 medium-7 large-5 cell">
+          <div className="small-12 medium-8 large-6 cell">
             <div className="cart card">
               <div className="cart__header card-divider">Winkelmand</div>
               <div className="cart__contents card-section">
