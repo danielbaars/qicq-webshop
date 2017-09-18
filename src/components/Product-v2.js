@@ -21,7 +21,7 @@ class Product extends Component {
     this.state = initialState;
   }
   componentDidMount() {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
+    const product = this.props.product;
     const firstSize = product.colors[Object.keys(product.colors)[0]].sizes[0];
     this.setState({
       frameSize: firstSize,
@@ -30,7 +30,7 @@ class Product extends Component {
     });
   }
   componentWillReceiveProps(nextProps) {
-    const product = this.props.data.qicqBikes[nextProps.match.params.id];
+    const product = nextProps.product;
     const firstSize = product.colors[Object.keys(product.colors)[0]].sizes[0];
     const newValues = {
       frameSize: firstSize,
@@ -42,7 +42,7 @@ class Product extends Component {
     );
   }
   renderColors() {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
+    const product = this.props.product;
     const colors = Object.keys(product.colors);
     return colors.map(color => {
       return (
@@ -51,17 +51,16 @@ class Product extends Component {
     });
   }
   selectColor(color) {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
     this.setState({
       color
     }, this.setState({
-      frameSize: product.colors[color].sizes[0]
+      frameSize: this.props.product.colors[color].sizes[0]
     }));
   }
   renderSizes() {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
+    const product = this.props.product;
     const color = this.state.color;
-    const sizesInfo = this.props.data.frameSizes;
+    const sizesInfo = this.props.sizes;
     if (product.colors[color] !== undefined) {
       return product.colors[color].sizes.map(size => {
         return (
@@ -78,7 +77,7 @@ class Product extends Component {
     });
   }
   renderOtherOptions() {
-    const options = this.props.data.stromerOptions;
+    const options = this.props.options;
     return _.map(options, item => {
       return (
         <div className="product__options-item" key={item.id}>
@@ -94,14 +93,13 @@ class Product extends Component {
     }, this.setPrice);
   }
   calculatePrice() {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
-    const options = this.props.data.stromerOptions;
+    const options = this.props.options;
     if ( _.some(options, option => this.state[option.id]) ) {
       return _.filter(options, option => {
         return this.state[option.id];
-      }).map((option) => option.price).reduce((total, num) => total + num ) + product.price;
+      }).map((option) => option.price).reduce((total, num) => total + num ) + this.props.product.price;
     } else {
-      return product.price;
+      return this.props.product.price;
     }
   }
   setPrice() {
@@ -110,49 +108,41 @@ class Product extends Component {
     });
   }
   selectedOptions() {
-    const options = this.props.data.stromerOptions;
+    const options = this.props.options;
     return _.filter(options, option => {
       return this.state[option.id];
     });
   }
   render() {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
+    const product = this.props.product;
     return (
-      <div className="grid-container">
-        <div className="product grid-x grid-margin-x">
-          <div className="small-12 medium-7 cell">
-            <div className="product__info">
-              <h1 className="product__title">{product.brand} {product.model} {product.type}</h1>
-              <div className="product__summary">{product.summary}</div>
-              <div className="product__visual">
-                {product.colors[this.state.color] != undefined &&
-                  <img src={product.colors[this.state.color].visual} />
-                }
-              </div>
-            </div>
-          </div>
-          <div className="small-12 medium-5 cell">
+      <div>
+        <div className="product">
+          <div className="product__info">
+            <h1 className="product__title">{product.brand} {product.model} {product.type}</h1>
+            <div className="product__summary">{product.summary}</div>
+            <div className="product__visual"><img src={product.visual} /></div>
             <div className="product__price">{this.state.price.cformat()}</div>
-            <div className="product__options">
-              <div className="product__color">
-                <h3 className="options__label">Kleuren:</h3>
-                <div className="button-group">
-                  {this.renderColors()}
-                </div>
-              </div>
-              <div className="product__frame-size">
-                <h3 className="options__label">Framemaat:</h3>
-                <div className="button-group">
-                  {this.renderSizes()}
-                </div>
-              </div>
-              <h3 className="options__label">Andere opties:</h3>
-              {this.renderOtherOptions()}
-            </div>
-            {product.colors[this.state.color] != undefined &&
-              <AddToCart product={product.brand + ' ' + product.model + ' ' + product.type} color={product.colors[this.state.color].colorName} frameSize={this.state.frameSize} price={product.price} options={this.selectedOptions()} />
-            }
           </div>
+          <div className="product__options">
+            <div className="product__color">
+              <h3 className="options__label">Kleuren:</h3>
+              <div className="button-group">
+                {this.renderColors()}
+              </div>
+            </div>
+            <div className="product__frame-size">
+              <h3 className="options__label">Framemaat:</h3>
+              <div className="button-group">
+                {this.renderSizes()}
+              </div>
+            </div>
+            <h3 className="options__label">Andere opties:</h3>
+            {this.renderOtherOptions()}
+          </div>
+          {product.colors[this.state.color] != undefined &&
+            <AddToCart product={product.brand + ' ' + product.model + ' ' + product.type} color={product.colors[this.state.color].colorName} frameSize={this.state.frameSize} price={product.price} options={this.selectedOptions()} />
+          }
         </div>
       </div>
     );

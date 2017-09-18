@@ -11,22 +11,21 @@ export default class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
-      dataFetched: false
+      data: {}
     };
   }
   componentDidMount() {
     var _this = this;
     axios.get(DATA_URL).then(response => {
       _this.setState({
-        data: response.data,
-        dataFetched: true
+        data: response.data
       });
     });
   }
   render() {
     const { store, history } = this.props;
-    if (this.state.dataFetched) {
+    const dataLength = Object.keys(this.state.data).length;
+    if (dataLength > 0) {
       return (
         <Provider store={store}>
           <ConnectedRouter history={history}>
