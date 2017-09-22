@@ -10,6 +10,10 @@ $h7: 12px
 
 @import colors
 
+@import cart
+
+@import form-customer-info
+
 =button($bgc, $color: $white)
   background-color: $bgc
   color: $color
@@ -18,6 +22,11 @@ $h7: 12px
     color: $color
   &.hollow
     background-color: transparent
+    &.selected,
+    &:hover
+      background-color: $bgc
+      color: $white
+      border-color: $bgc
   .arrow-left
     border-right-color: $bgc
   .arrow-right
@@ -63,6 +72,7 @@ $h7: 12px
     +button-color($black)
   &--white
     +button-color($off-white, $black)
+    border: 3px solid $gray-200
   &--silver
     +button-color($silver, $black)
   &--audi-brown
@@ -71,6 +81,7 @@ $h7: 12px
     +button-color($green)
   &.chosen-color
     outline: 3px solid $blue
+    border: 3px solid $white
 
 body
   padding-top: $default-margin + 8
@@ -87,6 +98,7 @@ body, h1, h2, h3, h4, h5, h6
     display: inline-block
     padding: 2px 8px
     color: $blue
+    margin-right: 5px
   .active
     background-color: $blue
     color: $white
@@ -137,43 +149,29 @@ body, h1, h2, h3, h4, h5, h6
   .button
     font-weight: bold
 
-.cart__header
-  background-color: $blue
-  color: $white
+.overview__filters
+  margin-bottom: $default-margin * 2
+  .button
+    margin-right: 8px
+    margin-bottom: 0
+
+.overview__product
+  height: 424px
+  margin-bottom: $default-margin * 2
+  &:hover,
+  &:focus
+    color: $black
+
+.overview__product-name
   font-weight: bold
-  font-size: 20px
+  font-size: 18px
+  line-height: 1.1
+  margin-bottom: $default-margin / 2
+
+.overview__product-summary
+  font-size: 13px
+
+.overview__product-price
+  font-size: 18px
+  font-weight: bold
   line-height: 1
-
-.cart__empty
-  color: $gray-600
-
-.cart__item
-  .name,
-  .price
-    display: inline-block
-  .name
-    width: 60%
-  .price
-    width: 30%
-  .action
-    width: 10%
-
-.cart__main-product
-  font-size: $h5
-  margin-bottom: 4px
-
-.cart__options
-  margin-bottom: $default-margin
-
-.cart__total-price
-  // margin-bottom: $default-margin
-  font-size: $h5
-  font-weight: bold
-
-.cart__remove
-  position: relative
-  top: -2px
-  padding: 0.25em 0.35em
-  margin-right: 3px
-  margin-bottom: 0
-  border-radius: 6px

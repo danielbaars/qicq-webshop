@@ -1,0 +1,55 @@
+.cart__header
+  background-color: $blue
+  color: $white
+  font-weight: bold
+  line-height: 1
+  .cart--cart-page &
+    font-size: 20px
+    padding: 0.9rem
+  .cart--form-page &
+    font-size: 16px
+    padding: 0.7rem 0.9rem
+
+.cart__empty
+  color: $gray-600
+
+.cart__item
+  .name,
+  .price
+    display: inline-block
+  .name
+    width: 70%
+  .price
+    width: 25%
+  .action
+    width: 5%
+
+.cart__main-product,
+.cart__total-price
+  .cart--cart-page &
+    font-size: $h5
+  .cart--form-page &
+    font-size: $h6
+
+.cart__main-product
+  margin-bottom: 4px
+
+.cart__options
+  margin-bottom: $default-margin
+
+.cart__option
+  .cart--cart-page &
+    font-size: $h6
+  .cart--form-page &
+    font-size: $h7
+
+.cart__total-price
+  font-weight: bold
+
+.cart__remove
+  position: relative
+  top: -1px
+  padding: 0.15em 0.35em
+  margin-right: 3px
+  margin-bottom: 0
+  border-radius: 10px
