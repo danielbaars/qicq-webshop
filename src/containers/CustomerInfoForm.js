@@ -30,9 +30,13 @@ const renderField = ( { input, label, type, meta: { touched, error, warning, val
   );
 };
 
-const TestForm = (props) => {
+const CustomerInfoForm = (props) => {
   return (
     <div>
+      <h1 className="order-step__header">
+        <span className="order-step__number">1.</span>
+        Uw gegevens
+      </h1>
       <form onSubmit={ props.handleSubmit } className="form-customer-info">
         <Field name="firstName" component={renderField} type="text" label="Voornaam" autocomplete="given-name" />
         <Field name="lastName" component={renderField} type="text" label="Achternaam" autocomplete="family-name" />
@@ -50,7 +54,7 @@ const TestForm = (props) => {
         <Field name="city" component={renderField} type="text" label="Plaats" autocomplete="address-level2"/>
         <div className="grid-x">
           <div className="small-9 small-offset-3 cell">
-            <button type="submit" className="button primary">Volgende stap</button>
+            <button type="submit" className="button primary large order-step__button">Kies ontvangstwijze <i className="fa fa-chevron-right" /></button>
           </div>
         </div>
       </form>
@@ -100,7 +104,7 @@ function validate(values) {
     errors.streetName = validationMessages.street[2];
   }
   if (!values.city) {
-    errors.city = 'Foute boel!';
+    errors.city = validationMessages.city[1];
   }
 
   return errors;
@@ -113,4 +117,4 @@ export default reduxForm({
     country: 'Nederland'
   },
   validate
-})(TestForm);
+})(CustomerInfoForm);

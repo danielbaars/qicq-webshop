@@ -5,3 +5,5 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const REMOVE_OPTION = 'REMOVE_OPTION';
 export const EMPTY_CART = 'EMPTY_CART';
+
+export const ADD_CUSTOMER_INFO = 'ADD_CUSTOMER_INFO';

@@ -6,13 +6,16 @@ $h3: 31px
 $h4: 25px
 $h5: 20px
 $h6: 16px
-$h7: 12px
+$h7: 14px
+$h8: 12px
 
 @import colors
 
 @import cart
 
 @import form-customer-info
+
+@import order-steps
 
 =button($bgc, $color: $white)
   background-color: $bgc
@@ -52,6 +55,8 @@ $h7: 12px
     +button($success)
   .button-group &
     margin-right: 5px
+  &.large
+    padding: 0.7em 1em  
   .arrow
     display: inline-block
     position: relative

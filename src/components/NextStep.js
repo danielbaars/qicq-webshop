@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
 
-class NextStep extends Component {
-  render() {
-    console.log('Props are:', this.props);
-    return (
-      <div className="grid-container">
-        <div className="grid-x grid-margin-x">
-          <div className="small-12 medium-7 cell">
-            <h1>Something</h1>
-          </div>
+import ShoppingCartContents from '../containers/ShoppingCartContents';
+import CustomerInfo from '../containers/CustomerInfo';
+
+const NextStep = (props) => {
+  return (
+    <div className="grid-container">
+      <div className="grid-x grid-margin-x">
+        <div className="small-12 medium-7 cell">
+          <h1 className="order-step__header">
+            <span className="order-step__number">2.</span>
+            Hoe wilt u uw bestelling ontvangen?
+          </h1>
+        </div>
+        <div className="small-12 medium-5 cell">
+          <ShoppingCartContents context="sidebar" edit={false} />
+          <CustomerInfo />
         </div>
       </div>
-    );
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    userinfo: state.form
-  };
+    </div>
+  );
 };
 
-
-
-export default connect(mapStateToProps)(NextStep);
+export default NextStep;

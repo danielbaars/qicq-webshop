@@ -58,8 +58,8 @@ class ShoppingCartContents extends Component {
   }
   render() {
     return (
-      <div className={"cart card cart--" + this.props.className}>
-        <div className="cart__header card-divider">Winkelmand</div>
+      <div className={"cart card card--" + this.props.context}>
+        <div className="cart__header card__header card-divider">{this.props.edit ? 'Winkelmand' : 'Overzicht bestelling'}</div>
         <div className="cart__contents card-section">
           {this.props.contents.length > 0 ? this.renderData() : <div className="cart__empty">Uw winkelmand is nog leeg...</div>}
         </div>

@@ -1,12 +1,12 @@
-.cart__header {
+.card__header {
   background-color: #007bff;
   color: #fff;
   font-weight: bold;
   line-height: 1; }
-  .cart--cart-page .cart__header {
+  .card--main .card__header {
     font-size: 20px;
     padding: 0.9rem; }
-  .cart--form-page .cart__header {
+  .card--sidebar .card__header {
     font-size: 16px;
     padding: 0.7rem 0.9rem; }
 
@@ -26,11 +26,11 @@
 .cart__item .action {
   width: 5%; }
 
-.cart--cart-page .cart__main-product, .cart--cart-page
+.card--main .cart__main-product, .card--main
 .cart__total-price {
   font-size: 20px; }
 
-.cart--form-page .cart__main-product, .cart--form-page
+.card--sidebar .cart__main-product, .card--sidebar
 .cart__total-price {
   font-size: 16px; }
 
@@ -40,11 +40,11 @@
 .cart__options {
   margin-bottom: 16px; }
 
-.cart--cart-page .cart__option {
+.card--main .cart__option {
   font-size: 16px; }
 
-.cart--form-page .cart__option {
-  font-size: 12px; }
+.card--sidebar .cart__option {
+  font-size: 14px; }
 
 .cart__total-price {
   font-weight: bold; }
@@ -56,6 +56,9 @@
   margin-right: 3px;
   margin-bottom: 0;
   border-radius: 10px; }
+
+.customer-details {
+  font-size: 14px; }
 
 .form-customer-info label {
   font-weight: bold;
@@ -78,6 +81,26 @@
   position: relative;
   top: 5px;
   color: #28a745; }
+
+.order-step__header {
+  width: 91.66667%;
+  color: #007bff;
+  font-size: 31px;
+  line-height: 1;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #cce5ff; }
+
+.order-step__number {
+  color: #99caff;
+  margin-right: .25em; }
+
+.order-step__button {
+  margin-top: 8px;
+  margin-bottom: 32px; }
+  .order-step__button .fa {
+    font-size: 0.8em;
+    margin-left: 4px; }
 
 .button.selected {
   background-color: #007bff;
@@ -166,6 +189,9 @@
 
 .button-group .button {
   margin-right: 5px; }
+
+.button.large {
+  padding: 0.7em 1em; }
 
 .button .arrow {
   display: inline-block;
@@ -285,7 +311,7 @@ body, h1, h2, h3, h4, h5, h6 {
 .button .sub {
   display: block;
   margin-top: 8px;
-  font-size: 12px; }
+  font-size: 14px; }
 
 .product__order .button {
   font-weight: bold; }
