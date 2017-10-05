@@ -1,15 +1,3 @@
-.card__header
-  background-color: $blue
-  color: $white
-  font-weight: bold
-  line-height: 1
-  .card--main &
-    font-size: 20px
-    padding: 0.9rem
-  .card--sidebar &
-    font-size: 16px
-    padding: 0.7rem 0.9rem
-
 .cart__empty
   color: $gray-600
 
@@ -28,14 +16,23 @@
   font-family: $nav-ff
   font-size: $h5
   line-height: 1.3
+  &--sidebar
+    font-size: $h6
+    line-height: 1.2
 
 .cart__product-name
   a
     color: $qicq-dark-gray
+  .color-size
+    font-family: $subnav-ff
+  &--sidebar
+    margin-bottom: 4px
 
 .cart__option-name,
 .cart__option-price
   font-size: $h6
+  &--sidebar
+    font-size: $h7
 
 .cart__option-name
   font-family: $body-ff

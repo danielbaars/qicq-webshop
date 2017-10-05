@@ -21,31 +21,36 @@ const CartItemColumns = props => {
   const product = props.type === 'product';
   const option = props.type === 'option';
   const total = props.type === 'total';
+  const sidebar = props.context === 'sidebar';
   const args = [props.index, props.i];
   return (
     <div className='grid-x grid-margin-x'>
-      <div className='small-12 medium-8 cell'>
-        <div className={`cart__${props.type}-name`}>
+      <div className={(!sidebar ? 'small-12 medium-7' : 'small-12 medium-8') + ' cell'}>
+        <div className={`cart__${props.type}-name cart__${props.type}-name--${props.context}`}>
           {{
-            product: <NavLink to={'/products/' + props.id}>{props.name}</NavLink>,
+            product: <NavLink to={'/products/' + props.id}>{props.name} {sidebar && <span className='color-size'>({props.color}, {props.size}")</span>}</NavLink>,
             option: <span>+ {props.name}</span>,
             total: <span>{props.name}</span>
           }[props.type]}
         </div>
-        {product &&
-          <div className="product__choices">
-            <div className='color'><span>Kleur:</span> {props.color}</div>
-            <div className='size'><span>Maat:</span> {props.size}"</div>
-          </div>
+        {
+          !sidebar &&
+            product &&
+              <div className="product__choices">
+                <div className='color'><span>Kleur:</span> {props.color}</div>
+                <div className='size'><span>Maat:</span> {props.size}"</div>
+              </div>
         }
       </div>
-      <div className='small-12 medium-2 cell'>
-        <div className={`cart__${props.type}-price`}>{props.price.cformat()}</div>
+      <div className={(!sidebar ? 'small-12 medium-3' : 'small-12 medium-4') + ' cell'}>
+        <div className={`cart__${props.type}-price cart__${props.type}-price--${props.context}`}>{props.price.cformat()}</div>
       </div>
-      {!total &&
-        <div className='small-12 medium-2 cell'>
-          <a onClick={() => props.remove(...args)} className='cart__remove'>verwijder</a>
-        </div>
+      {
+        !sidebar &&
+          !total &&
+            <div className='small-12 medium-2 cell'>
+              <a onClick={() => props.remove(...args)} className='cart__remove'>verwijder</a>
+            </div>
       }
     </div>
   );
@@ -60,17 +65,18 @@ class ShoppingCartContents extends Component {
         {this.props.contents.map((product, index) => {
           return (
             <CartItem key={_.uniqueId()}>
-              {!sidebar &&
-                <div className='small-6 medium-3 cell'>
-                  <div className="cart__product-visual imgc"><NavLink to={'/products/' + product.id}><img src={product.image} /></NavLink></div>
-                </div>
+              {
+                !sidebar &&
+                  <div className='small-6 medium-3 cell'>
+                    <div className="cart__product-visual imgc"><NavLink to={'/products/' + product.id}><img src={product.image} /></NavLink></div>
+                  </div>
               }
-              <div className='small-6 medium-9 cell'>
-                <CartItemColumns type='product' id={product.id} name={product.name} color={product.color} size={product.size} price={product.price} index={index} remove={this.props.removeProduct} />
+              <div className={(!sidebar ? 'small-6 medium-9' : 'small-12') + ' cell'}>
+                <CartItemColumns type='product' id={product.id} name={product.name} color={product.color} size={product.size} price={product.price} index={index} remove={this.props.removeProduct} context={context} />
                 {product.options.length > 0 &&
                   <div className='cart__options'>
                     {product.options.map((option, i) => {
-                      return <CartItemColumns type='option' name={option.name} price={option.price} index={index} i={i} remove={this.props.removeOption} key={_.uniqueId()} />;
+                      return <CartItemColumns type='option' name={option.name} price={option.price} index={index} i={i} remove={this.props.removeOption} context={context} key={_.uniqueId()} />;
                     })}
                   </div>
                 }
@@ -79,8 +85,8 @@ class ShoppingCartContents extends Component {
           );
         })}
         <CartItem>
-          <div className='small-6 medium-9 medium-offset-3 cell'>
-            <CartItemColumns type='total' name='Totaal' price={this.calculatePrice()} />
+          <div className={(!sidebar ? 'small-6 medium-9 medium-offset-3' : 'small-12') + ' cell'}>
+            <CartItemColumns type='total' name='Totaal' price={this.calculatePrice()} context={context} />
           </div>
         </CartItem>
       </div>
