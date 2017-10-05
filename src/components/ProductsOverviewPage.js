@@ -5,11 +5,14 @@ import { NavLink } from 'react-router-dom';
 
 import cformat from '../utils/euroFormat';
 
+import Content from './Content';
+import Row from './Row';
+
 class ProductsOverviewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: ""
+      filter: ''
     };
   }
   filterProducts(filter) {
@@ -29,13 +32,13 @@ class ProductsOverviewPage extends Component {
     }
     return productsToDisplay.map(product => {
       return (
-        <div className="small-12 medium-4 large-4 cell" key={_.uniqueId()}>
-          <NavLink to={"/products/" + product.id} className="card overview__product">
-            <div className="card-divider overview__product-name">{product.brand + ' ' + product.model + ' ' + product.type}</div>
-            <div className="overview__product-visual"><img src={product.colors[Object.keys(product.colors)[0]].visual} /></div>
-            <div className="card-section overview__product-info">
-              <p className="overview__product-summary">{product.summary}</p>
-              <div className="overview__product-price">{product.price.cformat()}</div>
+        <div className='small-12 medium-4 large-4 cell' key={_.uniqueId()}>
+          <NavLink to={'/products/' + product.id} className='card overview__product'>
+            <div className='card-divider overview__product-name'>{product.brand + ' ' + product.model + ' ' + product.type}</div>
+            <div className='overview__product-visual'><img src={product.colors[Object.keys(product.colors)[0]].visual} /></div>
+            <div className='card-section overview__product-info'>
+              <p className='overview__product-summary'>{product.summary}</p>
+              <div className='overview__product-price'>{product.price.cformat()}</div>
             </div>
           </NavLink>
         </div>
@@ -44,18 +47,19 @@ class ProductsOverviewPage extends Component {
   }
   render() {
     return (
-      <div className="grid-container">
-        <div className="grid-x grid-margin-x">
-          <div className="small-12 cell">
-            <div className="overview__filters">
-              <a onClick={() => this.filterProducts('')} className={"button success hollow small" + (this.state.filter === '' ? " selected" : "")}>Alle Stromers</a>
-              <a onClick={() => this.filterProducts('ST1')} className={"button success hollow small" + (this.state.filter === 'ST1' ? " selected" : "")}>ST1</a>
-              <a onClick={() => this.filterProducts('ST2')} className={"button success hollow small" + (this.state.filter === 'ST2' ? " selected" : "")}>ST2</a>
+      <Content contentClass='overview'>
+        <Row>
+          <div className='small-12 cell'>
+            <h1 className='page-title overview__title'>Stromer e-bikes</h1>
+            <div className='overview__filters'>
+              <a onClick={() => this.filterProducts('')} className={'button success hollow' + (this.state.filter === '' ? ' selected' : '')}>Alle Stromers</a>
+              <a onClick={() => this.filterProducts('ST1')} className={'button success hollow' + (this.state.filter === 'ST1' ? ' selected' : '')}>ST1</a>
+              <a onClick={() => this.filterProducts('ST2')} className={'button success hollow' + (this.state.filter === 'ST2' ? ' selected' : '')}>ST2</a>
             </div>
           </div>
           {this.renderProducts()}
-        </div>
-      </div>
+        </Row>
+      </Content>
     );
   }
 }

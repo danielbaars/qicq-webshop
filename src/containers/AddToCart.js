@@ -1,15 +1,15 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { addOrder } from '../actions/cartActions';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 
 class AddToCart extends Component {
   render() {
     return (
       <div className="product__order">
-        <NavLink to="/cart" onClick={() => this.props.addOrder({name: this.props.product, color: this.props.color, size: this.props.frameSize, price: this.props.price, options: this.props.options})} className="button success large">Bestel nu</NavLink>
+        <NavLink to="/cart" onClick={() => this.props.addOrder({id: this.props.id, name: this.props.product, image: this.props.image, color: this.props.color, size: this.props.frameSize, price: this.props.price, options: this.props.options})} className="button success large">Bestel nu</NavLink>
       </div>
     );
   }

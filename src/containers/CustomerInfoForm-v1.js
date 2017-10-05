@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Field, reduxForm } from 'redux-form';
+import { withRouter } from 'react-router-dom';
 
 import validationMessages from '../data/coolblueValidationMessages';
 
@@ -30,7 +31,12 @@ const renderField = ( { input, label, type, meta: { touched, error, warning, val
   );
 };
 
+const SubmitButton = withRouter( ({ history }) => (
+  <button onClick={() => { history.push('/nextstep') }} type="submit" className="button primary large order-step__button">Kies ontvangstwijze <i className="fa fa-chevron-right" /></button>
+));
+
 const CustomerInfoForm = (props) => {
+  // console.log('Props inside CustomerInfoForm', props);
   return (
     <div>
       <h1 className="order-step__header">
@@ -52,9 +58,12 @@ const CustomerInfoForm = (props) => {
         <Field name="houseNumberAddition" component={renderField} type="text" label="Toevoeging" autocomplete="off" />
         <Field name="streetName" component={renderField} type="text" label="Adres" autocomplete="street-address" />
         <Field name="city" component={renderField} type="text" label="Plaats" autocomplete="address-level2" />
+        {/* <Field name="history" component="input" type="hidden" value="TEST" /> */}
+        {/* <input type="hidden" name="History" value="TESTJE" /> */}
         <div className="grid-x">
           <div className="small-9 small-offset-3 cell">
             <button type="submit" className="button primary large order-step__button">Kies ontvangstwijze <i className="fa fa-chevron-right" /></button>
+            {/* <SubmitButton /> */}
           </div>
         </div>
       </form>
@@ -116,7 +125,5 @@ export default reduxForm({
   initialValues: {
     country: 'Nederland'
   },
-  destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,
   validate
 })(CustomerInfoForm);

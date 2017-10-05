@@ -1,0 +1,87 @@
+=button($bgc, $color: $white)
+  font-family: $nav-ff
+  letter-spacing: $nav-ls
+  background-color: $bgc
+  color: $color
+  border-radius: 5px
+  margin-bottom: 0
+  &:hover
+    background-color: darken($bgc, 10%)
+    color: $color
+  &.hollow
+    background-color: transparent
+    &.selected,
+    &:hover
+      background-color: $bgc
+      color: $white
+      border-color: $bgc
+  .arrow-left
+    border-right-color: $bgc
+  .arrow-right
+    border-left-color: $white
+
+=button-color($bgc, $color: $white)
+  background-color: $bgc
+  color: $color
+  &:hover
+    background-color: $bgc
+    color: $color
+
+.buttons-grouped
+  .button
+    margin-right: $default-margin
+    &:last-child
+      margin-right: 0
+      
+.button
+  .main
+    // font-weight: bold
+    font-size: $h5
+  .sub
+    display: block
+    margin-top: $default-margin / 2
+    font-size: $h7
+  &.selected
+    +button($primary)
+  &.not-selected
+    +button($secondary)
+  &.primary
+    +button($primary)
+  &.secondary
+    +button($secondary)
+  &.success
+    +button($success)
+  .button-group &
+    margin-right: 5px
+  &.large
+    padding: 0.7em 1em
+  .arrow
+    display: inline-block
+    position: relative
+    top: 2px
+  .arrow-left
+    margin-right: 7px
+  .arrow-right
+    margin-left: 7px
+  &--color
+    $size: 3px
+    position: relative
+    top: $size
+    left: $size
+    margin-right: 5px + ($size * 2) !important
+    border: $size solid $white
+    outline: $size solid $white
+  &--black
+    +button-color($black)
+  &--white
+    +button-color($off-white, $black)
+    border: 3px solid $gray-200
+  &--silver
+    +button-color($silver, $black)
+  &--audi-brown
+    +button-color($audi-brown)
+  &--green
+    +button-color($green)
+  &.chosen-color
+    outline: 3px solid $primary
+    border: 3px solid $white

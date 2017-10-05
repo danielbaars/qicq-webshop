@@ -1,15 +1,23 @@
 $default-margin: 16px
+$border-radius: 5px
 
-$h1: 48px
-$h2: 40px
-$h3: 31px
-$h4: 25px
-$h5: 20px
-$h6: 16px
-$h7: 14px
-$h8: 12px
+@import utils
 
 @import colors
+
+@import fonts
+
+@import font-awesome
+
+@import global
+
+@import buttons
+
+@import masthead
+
+@import footer
+
+@import overview
 
 @import cart
 
@@ -17,166 +25,8 @@ $h8: 12px
 
 @import order-steps
 
-=button($bgc, $color: $white)
-  background-color: $bgc
-  color: $color
-  &:hover
-    background-color: darken($bgc, 10%)
-    color: $color
-  &.hollow
-    background-color: transparent
-    &.selected,
-    &:hover
-      background-color: $bgc
-      color: $white
-      border-color: $bgc
-  .arrow-left
-    border-right-color: $bgc
-  .arrow-right
-    border-left-color: $white
+@import product
 
-=button-color($bgc, $color: $white)
-  background-color: $bgc
-  color: $color
-  &:hover
-    background-color: $bgc
-    color: $color
-
-.button
-  &.selected
-    +button($primary)
-  &.not-selected
-    +button($secondary)
-  &.primary
-    +button($primary)
-  &.secondary
-    +button($secondary)
-  &.success
-    +button($success)
-  .button-group &
-    margin-right: 5px
-  &.large
-    padding: 0.7em 1em  
-  .arrow
-    display: inline-block
-    position: relative
-    top: 2px
-  .arrow-left
-    margin-right: 7px
-  .arrow-right
-    margin-left: 7px
-  &--color
-    $size: 3px
-    position: relative
-    top: $size
-    left: $size
-    margin-right: 5px + ($size * 2) !important
-    border: $size solid $white
-    outline: $size solid $white
-  &--black
-    +button-color($black)
-  &--white
-    +button-color($off-white, $black)
-    border: 3px solid $gray-200
-  &--silver
-    +button-color($silver, $black)
-  &--audi-brown
-    +button-color($audi-brown)
-  &--green
-    +button-color($green)
-  &.chosen-color
-    outline: 3px solid $blue
-    border: 3px solid $white
-
-body
-  padding-top: $default-margin + 8
-
-body, h1, h2, h3, h4, h5, h6
-  font-family: 'Lato', sans-serif
-
-.grid-container
-  max-width: 64rem
-
-.shop__nav
-  margin-bottom: $default-margin + 8
-  a
-    display: inline-block
-    padding: 2px 8px
-    color: $blue
-    margin-right: 5px
-  .active
-    background-color: $blue
-    color: $white
-  .divider
-    margin-left: $default-margin - 4
-    margin-right: $default-margin - 4
-
-.product__info
-  margin-bottom: $default-margin
-
-.product__title
-  font-size: $h2
-  line-height: 1
-
-.product__summary,
-.product__price,
-.product__options
-  margin-bottom: $default-margin
-
-.product__visual
-  // display: none
-  height: 312px
-  img
-    max-height: 100%
-
-.product__price
-  font-weight: bold
-  font-size: $h4
-  line-height: 1.1
-
-.product__checkbox
-  margin-bottom: 0
-
-.options__label
-  font-weight: bold
-  font-size: $h6
-
-.button
-  .main
-    font-weight: bold
-    font-size: $h6
-  .sub
-    display: block
-    margin-top: $default-margin / 2
-    font-size: $h7
-
-.product__order
-  .button
-    font-weight: bold
-
-.overview__filters
-  margin-bottom: $default-margin * 2
-  .button
-    margin-right: 8px
-    margin-bottom: 0
-
-.overview__product
-  height: 424px
-  margin-bottom: $default-margin * 2
-  &:hover,
-  &:focus
-    color: $black
-
-.overview__product-name
-  font-weight: bold
-  font-size: 18px
-  line-height: 1.1
-  margin-bottom: $default-margin / 2
-
-.overview__product-summary
-  font-size: 13px
-
-.overview__product-price
-  font-size: 18px
-  font-weight: bold
-  line-height: 1
+.masthead,
+.content
+  margin-bottom: $default-margin * 1.5

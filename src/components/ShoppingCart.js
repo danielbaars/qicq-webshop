@@ -1,21 +1,28 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import Content from './Content';
+import Row from './Row';
 import ShoppingCartContents from '../containers/ShoppingCartContents';
 
 const ShoppingCart = () => {
   return (
-    <div className="grid-container">
-      <div className="grid-x grid-margin-x">
-        <div className="small-12 medium-8 large-6 cell">
-          <ShoppingCartContents context="main" edit={true} />
-          <div className="button-group">
-            <NavLink to="/" className="button success hollow"><i className="arrow arrow-left" />Verder met winkelen</NavLink>
-            <NavLink to="/form" className="button success">Verder met bestellen<i className="arrow arrow-right" /></NavLink>
+    <Content contentClass='cart'>
+      <Row>
+        <div className='small-12 cell'>
+          <h1 className='page-title cart__title'>Winkelmand</h1>
+          <div className='cart card'>
+            <div className='card-section'>
+              <ShoppingCartContents context='cart-page' />
+            </div>
+          </div>
+          <div className='cart__nav buttons-grouped'>
+            <NavLink to='/' className='cart__button-prev button success hollow large'><i className='fa fa-chevron-left' /> Verder met winkelen</NavLink>
+            <NavLink to='/form' className='cart__button-next button success large'>Verder met bestellen <i className='fa fa-chevron-right' /></NavLink>
           </div>
         </div>
-      </div>
-    </div>
+      </Row>
+    </Content>
   );
 };
 

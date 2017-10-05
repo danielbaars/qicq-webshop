@@ -1,0 +1,44 @@
+.footer
+  background-color: $qicq-dark-gray
+  padding: ($default-margin * 2) 0
+
+.footer__list--social
+  margin-top: $default-margin / 2
+  li
+    display: inline-block
+    width: 60px
+
+.footer__link
+  font-family: $body-ff
+  font-size: $h7
+  line-height: 1
+  letter-spacing: $body-ls
+  color: $qicq-light-gray
+  &:hover
+    color: $white
+  .footer__list--contact &,
+  .footer__list--social &
+    font-family: $nav-ff
+    font-size: $h5
+    color: $white
+    display: inline-block
+    height: 40px
+    &:hover
+      color: $qicq-logo-blue
+  .footer__list--social &
+    .link__label
+      display: none
+  &--telefoon
+    +icon-link($fa-mobile-phone, $qicq-red)
+      font-size: 1.6em
+      line-height: 0.4
+      position: relative
+      top: 4px
+  &--email
+    +icon-link($fa-envelope, $qicq-red)
+  &--twitter
+    +icon-link($fa-twitter)
+  &--facebook
+    +icon-link($fa-facebook)
+  &--linkedin
+    +icon-link($fa-linkedin)

@@ -1,0 +1,44 @@
+.masthead
+  background-color: $qicq-dark-gray
+  padding: 20px 0
+
+.masthead__logo
+  width: 175px
+
+.nav__link
+  display: inline-block
+  font-family: $nav-ff
+  font-size: $nav-fs
+  line-height: 1
+  letter-spacing: $body-ls
+  color: white
+  margin-right: $default-margin * 2
+  &:hover
+    color: $qicq-logo-blue
+  &--cart
+    float: right
+    text-align: right
+    margin-right: 0
+    +icon-link($fa-shopping-basket)
+    .link__label
+      display: none
+
+.link__sublabel
+  font-family: $subnav-ff
+  font-size: $subnav-fs
+
+.cart__quantity
+  margin-left: $default-margin / 2  
+
+// .shop__nav
+//   margin-bottom: $default-margin + 8
+//   a
+//     display: inline-block
+//     padding: 2px 8px
+//     margin-right: 5px
+//   .active
+//     background-color: $blue
+//     color: $white
+//   .divider
+//     margin-left: $default-margin - 4
+//     margin-right: $default-margin - 4

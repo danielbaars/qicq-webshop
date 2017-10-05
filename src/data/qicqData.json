@@ -49,7 +49,7 @@
       "brand" : "Stromer",
       "model" : "ST1",
       "type" : "comfort 25 km",
-      "summary" : "Een heerlijke ebike die ondersteunt tot 25 km/uur.Deze ebike is geen helmplicht, en je hebt geen kentekenplaatje nodig.",
+      "summary" : "Een heerlijke ebike die ondersteunt tot 25 km/uur. Deze ebike is geen helmplicht, en je hebt geen kentekenplaatje nodig.",
       "price" : 2990,
       "maxSpeed" : 25,
       "colors" : {"white": {"colorName": "Wit", "sizes": [16], "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg"}, "black": {"colorName": "Zwart", "sizes": [16], "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg"}},

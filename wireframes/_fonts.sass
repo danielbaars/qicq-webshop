@@ -1,0 +1,55 @@
+$h1: 48px
+$h2: 40px
+$h3: 31px
+$h4: 25px
+$h5: 20px
+$h6: 16px
+$h7: 14px
+$h8: 12px
+
+$header-font: "HelveticaNeue Black Condensed"
+$body-font: "HelveticaNeue Roman"
+$body-bold-font: "HelveticaNeue Bold"
+$nav-font: "HelveticaNeue Bold Condensed"
+$subnav-font: "HelveticaNeue Condensed"
+
+$header-ff: "HelveticaNeue Black Condensed", Arial, sans-serif
+$body-ff: "HelveticaNeue Roman", Arial, sans-serif
+$body-bold-ff: "HelveticaNeue Bold", Arial, sans-serif
+$nav-ff: "HelveticaNeue Bold Condensed", Arial, sans-serif
+$subnav-ff: "HelveticaNeue Condensed", Arial, sans-serif
+
+$subheader-ff: $nav-ff
+$button-ff: $nav-ff
+
+$header-fs: 36px
+$subheader-fs: 20px
+$body-fs: 16px
+$nav-fs: 1.188rem
+$subnav-fs: 0.688em
+
+$header-lh: 1.2
+$body-lh: 1.3
+$nav-lh: 1
+
+$body-ls: 0.5pt
+$nav-ls: 0.3pt
+
+$helvetica-neue-roman: 'https://www.qicq.nl/css/fonts/692692/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff'
+$helvetica-neue-bold: 'https://www.qicq.nl/css/fonts/692716/14ff6081-326d-4dae-b778-d7afa66166fc.woff'
+$helvetica-neue-condensed: 'https://www.qicq.nl/css/fonts/692698/842088d0-1ae2-40d0-8561-3c95761ba7a6.woff'
+$helvetica-neue-bold-condensed: 'https://www.qicq.nl/css/fonts/692722/102ab74c-0e84-4fe5-a17a-b20fb643591a.woff'
+$helvetica-neue-black-condensed: 'https://www.qicq.nl/css/fonts/692743/a6949d17-6d8e-42ab-8032-2d9cb114c1b4.woff'
+
+=font-face($font, $url)
+  @font-face
+    font-family: $font
+    src: url($url) format('woff')
+    font-weight: normal
+    font-style: normal
+
++font-face($header-font, $helvetica-neue-black-condensed)
++font-face($body-font, $helvetica-neue-roman)
++font-face($body-bold-font, $helvetica-neue-bold)
++font-face($nav-font, $helvetica-neue-bold-condensed)
++font-face($subnav-font, $helvetica-neue-condensed)

@@ -2,6 +2,9 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import cformat from '../utils/euroFormat';
 
+import Content from './Content';
+import Row from './Row';
+
 import AddToCart from '../containers/AddToCart';
 
 const initialState = {
@@ -116,13 +119,14 @@ class Product extends Component {
     });
   }
   render() {
-    const product = this.props.data.qicqBikes[this.props.match.params.id];
+    const id = this.props.match.params.id;
+    const product = this.props.data.qicqBikes[id];
     return (
-      <div className="grid-container">
-        <div className="product grid-x grid-margin-x">
+      <Content contentClass='product'>
+        <Row>
           <div className="small-12 medium-7 cell">
             <div className="product__info">
-              <h1 className="product__title">{product.brand} {product.model} {product.type}</h1>
+              <h1 className="product__title page-title">{product.brand} {product.model} {product.type}</h1>
               <div className="product__summary">{product.summary}</div>
               <div className="product__visual">
                 {product.colors[this.state.color] != undefined &&
@@ -150,11 +154,11 @@ class Product extends Component {
               {this.renderOtherOptions()}
             </div>
             {product.colors[this.state.color] != undefined &&
-              <AddToCart product={product.brand + ' ' + product.model + ' ' + product.type} color={product.colors[this.state.color].colorName} frameSize={this.state.frameSize} price={product.price} options={this.selectedOptions()} />
+              <AddToCart id={id} product={product.brand + ' ' + product.model + ' ' + product.type} image={product.colors[this.state.color].visual} color={product.colors[this.state.color].colorName} frameSize={this.state.frameSize} price={product.price} options={this.selectedOptions()} />
             }
           </div>
-        </div>
-      </div>
+        </Row>
+      </Content>
     );
   }
 }

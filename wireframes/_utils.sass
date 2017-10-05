@@ -1,0 +1,23 @@
+=icon-link($code, $color: inherit)
+  &::before
+    font-family: FontAwesome
+    font-weight: normal
+    display: inline-block
+    content: $code
+    width: 32px
+    color: $color
+    @content
+			
+.imgc
+	img, svg
+		max-width: 100%
+		width: 100%
+
+.xlist
+  margin: 0
+  padding: 0
+  list-style: none
+
+.hlist
+	li
+		display: inline-block

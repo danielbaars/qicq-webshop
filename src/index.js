@@ -1,13 +1,31 @@
-/* eslint-disable import/default */
-
 import React from 'react';
 import { render } from 'react-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router';
+import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
+
 import { AppContainer } from 'react-hot-loader';
-import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
+import cartContentsReducer from './reducers/cartContentsReducer';
+import customerInfoReducer from './reducers/customerInfoReducer';
 import '../wireframes/style.sass';
 require('./favicon.ico');
-const store = configureStore();
+
+const history = createHistory();
+
+const middleware = routerMiddleware(history);
+
+const rootReducer = combineReducers({
+  cartContents: cartContentsReducer,
+  routing: routerReducer,
+  form: formReducer,
+  customerInfo: customerInfoReducer
+});
+
+const store = createStore(rootReducer, applyMiddleware(middleware));
 
 render(
   <AppContainer>
