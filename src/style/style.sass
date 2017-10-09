@@ -1,7 +1,8 @@
-$default-margin: 16px
-$border-radius: 5px
+@import grid-variables
 
 @import utils
+
+@import margins
 
 @import colors
 
@@ -14,6 +15,8 @@ $border-radius: 5px
 @import buttons
 
 @import card
+
+@import burger-menu
 
 @import masthead
 
@@ -31,4 +34,10 @@ $border-radius: 5px
 
 .masthead,
 .content
-  margin-bottom: $default-margin * 1.5
+  margin-bottom: $default-margin
+  @media #{$medium}
+    margin-bottom: $default-margin * 1.5
+
+.content
+  &.overview
+    margin-bottom: 0

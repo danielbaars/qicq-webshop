@@ -6,7 +6,7 @@ import footerLinks from '../data/footerLinks';
 
 const FooterColumn = props => {
   return (
-    <div className='small-12 medium-3 cell'>
+    <div className={`small-12 medium-3 cell ${props.extraClasses}`}>
       {props.children}
     </div>
   );
@@ -26,18 +26,20 @@ const Footer = () => {
   return (
     <div className="footer">
       <Row>
-        <FooterColumn>
+        <FooterColumn extraClasses='small-order-2 medium-order-1'>
           <FooterLinks list={footerLinks[0]} />
         </FooterColumn>
-        <FooterColumn>
+        <FooterColumn extraClasses='small-order-3 medium-order-2'>
           <FooterLinks list={footerLinks[1]} />
         </FooterColumn>
-        <FooterColumn>
+        <FooterColumn extraClasses='small-order-4 medium-order-3'>
           <FooterLinks list={footerLinks[2]} />
         </FooterColumn>
-        <FooterColumn>
+        <FooterColumn extraClasses='small-order-1 medium-order-4'>
           <FooterLinks list={footerLinks[3]} listClass='contact' />
-          <FooterLinks list={footerLinks[4]} listClass='social' />
+          <div className='footer__list--social'>
+            <FooterLinks list={footerLinks[4]} />
+          </div>
         </FooterColumn>
       </Row>
     </div>

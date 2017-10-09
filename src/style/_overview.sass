@@ -1,14 +1,26 @@
 .overview__filters
-  margin-bottom: $default-margin * 2
-  .button
-    margin-right: 8px
-    margin-bottom: 0
+  text-align: center
+  margin-bottom: $default-margin
+  @media #{$medium}
+    text-align: left
+    margin-bottom: $default-margin * 1.5
+
+.overview__filter-button
+  font-size: 0.75rem
+  margin-right: 8px
+  margin-bottom: 0
+  &:last-child
+    margin-right: 0
+  @media #{$medium}
+    font-size: 1rem
 
 .overview__product
   border-radius: $border-radius
   border: 1px solid $qicq-logo-blue
-  height: 424px
-  margin-bottom: $default-margin * 2
+  margin-bottom: $default-margin
+  @media #{$medium}
+    height: 424px
+    margin-bottom: $default-margin * 1.5
   &:hover,
   &:focus
     color: $black
@@ -17,7 +29,6 @@
   background-color: $qicq-logo-blue
   color: $white
   font-family: $nav-ff
-  // font-weight: bold
   font-size: $h5
   line-height: 1.1
   padding: 0.7rem 1rem

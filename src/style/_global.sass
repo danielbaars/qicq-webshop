@@ -1,3 +1,5 @@
+$border-radius: 5px
+
 body
   font-family: $body-ff
   letter-spacing: $body-ls
@@ -18,6 +20,13 @@ label
   max-width: 64rem
 
 .page-title
-  font-size: $h2
-  line-height: 0.7
-  margin-bottom: $default-margin * 2
+  text-align: center
+  font-size: $h3
+  line-height: 0.9
+  color: $qicq-dark-gray
+  margin-bottom: $default-margin
+  @media #{$medium}
+    text-align: left
+    font-size: $h2
+    line-height: 0.7
+    margin-bottom: $default-margin * 2

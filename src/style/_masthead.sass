@@ -1,21 +1,31 @@
 .masthead
   background-color: $qicq-dark-gray
-  padding: 20px 0
+  padding: 12px 0
+  @media #{$medium}
+    padding: 20px 0
 
 .masthead__logo
-  width: 175px
+  display: flex
+  justify-content: center
+  .imgc
+    display: inline-block
+    width: 125px
+    @media #{$medium}
+      width: 175px
 
 .nav__link
   display: inline-block
   font-family: $nav-ff
-  font-size: $nav-fs
   line-height: 1
-  letter-spacing: $body-ls
   color: white
-  margin-right: $default-margin * 2
   &:hover
     color: $qicq-logo-blue
-  &--cart
+
+.nav__link--masthead
+  font-size: $nav-fs
+  letter-spacing: $body-ls
+  margin-right: $default-margin * 2
+  &.nav__link--cart
     float: right
     text-align: right
     margin-right: 0
@@ -23,12 +33,25 @@
     .link__label
       display: none
 
+.nav__link--ocm
+  font-size: $nav-fs
+  letter-spacing: $body-ls
+  padding: 0.5em
+  &.nav__link--cart
+    .fa
+      margin-right: 8px
+
 .link__sublabel
   font-family: $subnav-ff
   font-size: $subnav-fs
 
 .cart__quantity
-  margin-left: $default-margin / 2  
+  margin-left: $default-margin / 2
+
+// .shop__nav
+//   display: none
+//   @media #{$medium}
+//     display: block
 
 // .shop__nav
 //   margin-bottom: $default-margin + 8

@@ -7,7 +7,7 @@ import ShoppingCartContents from '../containers/ShoppingCartContents';
 
 const ShoppingCart = () => {
   return (
-    <Content contentClass='cart'>
+    <Content contentClass='cart-page'>
       <Row>
         <div className='small-12 cell'>
           <h1 className='page-title cart__title'>Winkelmand</h1>

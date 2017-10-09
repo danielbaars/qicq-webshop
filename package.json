@@ -31,6 +31,7 @@
   "dependencies": {
     "object-assign": "4.1.0",
     "react": "15.5.4",
+    "react-burger-menu": "2.1.6",
     "react-dom": "15.5.4",
     "react-redux": "5.0.5",
     "react-router": "4.2.0",

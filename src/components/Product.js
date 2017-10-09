@@ -68,7 +68,7 @@ class Product extends Component {
     if (product.colors[color] !== undefined) {
       return product.colors[color].sizes.map(size => {
         return (
-          <a onClick={() => this.selectFrameSize(size)} className={"button" + (this.state.frameSize == size ? " selected" : " not-selected")} key={_.uniqueId()}><span className="main">{sizesInfo[size].size}"</span><span className="sub">({sizesInfo[size].riderHeight})</span></a>
+          <a onClick={() => this.selectFrameSize(size)} className={'button button--frame-size' + (this.state.frameSize == size ? ' selected' : ' not-selected')} key={_.uniqueId()}><span className='main'>{sizesInfo[size].size}"</span><span className='sub'>({sizesInfo[size].riderHeight})</span></a>
         );
       });
     } else {
@@ -146,6 +146,9 @@ class Product extends Component {
               </div>
               <div className="product__frame-size">
                 <h3 className="options__label">Framemaat:</h3>
+                {/* <div className="grid-x grid-margin-x">
+                  {this.renderSizes()}
+                </div> */}
                 <div className="button-group">
                   {this.renderSizes()}
                 </div>

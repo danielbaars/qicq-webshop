@@ -52,9 +52,9 @@ class ProductsOverviewPage extends Component {
           <div className='small-12 cell'>
             <h1 className='page-title overview__title'>Stromer e-bikes</h1>
             <div className='overview__filters'>
-              <a onClick={() => this.filterProducts('')} className={'button success hollow' + (this.state.filter === '' ? ' selected' : '')}>Alle Stromers</a>
-              <a onClick={() => this.filterProducts('ST1')} className={'button success hollow' + (this.state.filter === 'ST1' ? ' selected' : '')}>ST1</a>
-              <a onClick={() => this.filterProducts('ST2')} className={'button success hollow' + (this.state.filter === 'ST2' ? ' selected' : '')}>ST2</a>
+              <a onClick={() => this.filterProducts('')} className={'overview__filter-button button success hollow' + (this.state.filter === '' ? ' selected' : '')}>Alle Stromers</a>
+              <a onClick={() => this.filterProducts('ST1')} className={'overview__filter-button button success hollow' + (this.state.filter === 'ST1' ? ' selected' : '')}>ST1</a>
+              <a onClick={() => this.filterProducts('ST2')} className={'overview__filter-button button success hollow' + (this.state.filter === 'ST2' ? ' selected' : '')}>ST2</a>
             </div>
           </div>
           {this.renderProducts()}

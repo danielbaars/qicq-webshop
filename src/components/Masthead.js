@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import Row from './Row';
+import LinksList from './LinksList';
 import mastheadLinks from '../data/mastheadLinks';
 
 const MastheadLinks = props => {
@@ -26,16 +27,16 @@ const Masthead = props => {
     <div className='masthead'>
       <Row extraClasses='align-middle'>
         <div className='small-12 medium-3 cell'>
-          <div className='masthead__logo imgc'>
-            <NavLink exact to='/'>
+          <div className='masthead__logo'>
+            <NavLink exact to='/' className='imgc'>
               <img src='../img/qicq-logo.svg' />
             </NavLink>
           </div>
         </div>
-        <div className='small-12 medium-7 cell'>
-          <MastheadLinks list={mastheadLinks[0]} />
+        <div className='hide-for-small-only medium-7 cell'>
+          <LinksList list={mastheadLinks[0]} listClasses='shop__nav xlist hlist' linkClass='masthead' />
         </div>
-        <div className='small-12 medium-2 cell'>
+        <div className='hide-for-small-only medium-2 cell'>
           <NavLink to='/cart' className='nav__link nav__link--cart'><span className="link__label">Winkelmand</span><span className="cart__quantity">({props.cart.length})</span></NavLink>
         </div>
       </Row>
