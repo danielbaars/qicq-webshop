@@ -34,6 +34,10 @@ $remove-width-small: 16px + $margin-width-small
     +cell
     +cell-width(3)
 
+.cart__product-visual--thank-you-page
+  @media #{$medium}
+    +cell-width(3)
+
 .cart__name
   +cell
   $price-remove-width-small: 92px - #{$margin-width-small} - #{$remove-width-small} - (#{$cell-margin-small} * 2)
@@ -47,6 +51,12 @@ $remove-width-small: 16px + $margin-width-small
   @media #{$medium}
     $price-width-medium: 92px - #{$margin-width-medium} - (#{$cell-margin-medium} * 2)
     width: calc(100% - #{$price-width-medium})
+
+.cart__name--thank-you-page
+  $price-width-small: 92px - #{$margin-width-small} - (#{$cell-margin-small} * 2)
+  width: calc(100% - #{$price-width-small})
+  @media #{$medium}
+    +cell-width(9)
 
 .cart__price
   +cell
@@ -103,6 +113,10 @@ $remove-width-small: 16px + $margin-width-small
 .cart__name--cart-page
   .color-size
     font-size: 0.8em
+
+.cart__name--cart-page,
+.cart__name--thank-you-page
+  .color-size
     @media #{$medium}
       display: none
 

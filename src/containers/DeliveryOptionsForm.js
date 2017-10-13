@@ -13,6 +13,7 @@ const FormRow = props => {
   );
 };
 
+
 const renderField = ( { input, label, type } ) => {
   return (
     <FormRow>
@@ -32,7 +33,7 @@ const DeliveryOptionsForm = (props) => {
         Hoe wilt u uw bestelling ontvangen?
       </h1>
       <form onSubmit={ props.handleSubmit } className="form-delivery-options">
-        <Field name="deliveryOptions" value="sendToThisAddress" component={renderField} type="radio" label="Verzend naar dit adres" checked />
+        <Field name="deliveryOptions" value="sendToThisAddress" component={renderField} type="radio" label="Verzend naar dit adres" />
         <Field name="deliveryOptions" value="sendToOtherAddress" component={renderField} type="radio" label="Verzend naar ander adres" />
         <Field name="deliveryOptions" value="pickUpFromStore" component={renderField} type="radio" label="Zelf afhalen" />
         <FormRow>

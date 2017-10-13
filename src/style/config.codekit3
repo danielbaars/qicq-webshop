@@ -251,6 +251,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_thank-you.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/_thank-you.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_utils.sass": {
 		"aP": 0,
 		"bl": 0,

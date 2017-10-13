@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Responsive from 'react-responsive';
 
-const Small = ({ children }) => <Responsive maxWidth={639} children={children} />;
-const Medium = ({ children }) => <Responsive minWidth={640} children={children} />;
+const Small = ({ children }) => <Responsive maxWidth={767} children={children} />;
+const Medium = ({ children }) => <Responsive minWidth={768} children={children} />;
 const Large = ({ children }) => <Responsive minWidth={1024} children={children} />;
 
 import Row from './Row';
@@ -41,6 +41,9 @@ class OrderForm extends Component {
     return (
       <Row>
         <div className='small-12 medium-7 cell'>
+          <CustomerInfoForm onSubmit={onSubmit} history={this.props.history} />
+        </div>
+        {/* <div className='small-12 medium-7 cell'>
           {
             page === 1 &&
             <CustomerInfoForm onSubmit={this.nextPage} />
@@ -49,7 +52,7 @@ class OrderForm extends Component {
             page === 2 &&
             <DeliveryOptionsForm previousPage={this.previousPage} onSubmit={onSubmit} history={this.props.history} />
           }
-        </div>
+        </div> */}
         <div className='small-12 medium-5 cell'>
           <div className='cart cart--sidebar card'>
             <div className='cart__header cart__header--sidebar card__header' onClick={() => this.toggleCart()}>Overzicht bestelling <i className={'fa ' + (cartOpen ? 'fa-chevron-down' : 'fa-chevron-up')} /></div>

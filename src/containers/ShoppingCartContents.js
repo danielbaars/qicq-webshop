@@ -28,6 +28,7 @@ const CartItemColumns = props => {
   const option = props.type === 'option';
   const total = props.type === 'total';
   const sidebar = props.context === 'sidebar';
+  const thankYou = props.context === 'thank-you-page';
   const args = [props.index, props.i];
   return (
     <div className='grid-x grid-margin-x'>
@@ -51,8 +52,9 @@ const CartItemColumns = props => {
       </div>
       {
         !sidebar &&
-          !total &&
-              <a onClick={() => props.remove(...args)} className={`cart__remove cart__remove--${props.type}`}><i className='cart__remove__icon fa fa-minus-square'/><span className='cart__remove__text'>verwijder</span></a>
+          !thankYou &&
+            !total &&
+              <a onClick={() => props.remove(...args)} className={`cart__remove cart__remove--${props.type} cart__remove--${props.context}`}><i className='cart__remove__icon fa fa-minus-square'/><span className='cart__remove__text'>verwijder</span></a>
       }
     </div>
   );
@@ -75,7 +77,7 @@ class ShoppingCartContents extends Component {
             <CartItem key={_.uniqueId()}>
               {
                 !sidebar &&
-                  <div className="cart__product-visual imgc"><NavLink to={'/products/' + product.id}><img src={product.image} /></NavLink></div>
+                  <div className={`cart__product-visual cart__product-visual--${context} imgc`}><NavLink to={'/products/' + product.id}><img src={product.image} /></NavLink></div>
               }
               <div className={(!sidebar ? 'small-12 medium-9' : 'small-12') + ' cell'}>
                 <CartItemColumns type='product' id={product.id} name={product.name} color={product.color} size={product.size} price={product.price} index={index} remove={this.props.removeProduct} context={context} />

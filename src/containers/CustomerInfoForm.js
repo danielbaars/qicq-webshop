@@ -118,5 +118,8 @@ export default reduxForm({
   },
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate
+  validate,
+  onSubmitSuccess: (result, dispatch, props) => {
+    props.history.push('/thank-you');
+  }
 })(CustomerInfoForm);

@@ -8,7 +8,8 @@ import OffCanvasMenu from './OffCanvasMenu';
 import ProductsOverviewPage from './ProductsOverviewPage';
 import Product from './Product';
 import CustomerInfoFormPage from '../containers/CustomerInfoFormPage';
-import ShoppingCart from '../components/ShoppingCart';
+import ShoppingCart from './ShoppingCart';
+import ThankYouPage from '../containers/ThankYouPage';
 import NotFoundPage from './NotFoundPage';
 
 import Masthead from './Masthead';
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path='/products/:id' render={routeProps => <Product {...routeProps} data={this.props.data} />} />
           <Route path='/form' component={CustomerInfoFormPage} />
           <Route path='/cart' component={ShoppingCart} />
+          <Route path='/thank-you' component={ThankYouPage} />
           <Route component={NotFoundPage} />
         </Switch>
         <Footer />
