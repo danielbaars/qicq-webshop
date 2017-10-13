@@ -8,15 +8,16 @@
   @media #{$medium}
     position: relative
     top: -6px
-    margin-bottom: $more
+    // margin-bottom: $more
 
 .order-step__number
   color: lighten($blue, 30%)
   margin-right: .25em
 
 .order-step__button
-  margin-top: $default
-  // margin-bottom: $double
+  margin-top: $half
+  @media #{$large}
+    margin-top: $less
   .fa
     font-size: 0.8em
     margin-left: 4px

@@ -134,6 +134,32 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_foundation-global.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/_foundation-global.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_foundation-settings.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/_foundation-settings.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_global.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -236,6 +262,29 @@
 		"oAP": "\/_utils.css",
 		"oF": 0,
 		"oS": 0,
+		"uL": 1
+		},
+	"\/foundation.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/foundation-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/foundation.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/foundation.css",
+		"oF": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/functions\/_currencyFormat.pug": {

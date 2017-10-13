@@ -1,47 +1,71 @@
+$cell-margin-small-unitless: 0.625
+$cell-margin-medium-unitless: 0.9375
+$cell-margin-small: $cell-margin-small-unitless * 1rem
+$cell-margin-medium: $cell-margin-medium-unitless * 1rem
+
 =cell
   flex-basis: auto
   -webkit-box-flex: 0
   flex: 0 0 auto
   min-height: 0px
   min-width: 0px
-  margin-left: 0.625rem
-  margin-right: 0.625rem
+  margin-left: $cell-margin-small
+  margin-right: $cell-margin-small
+  @media #{$medium}
+    margin-left: $cell-margin-medium
+    margin-right: $cell-margin-medium
 
 =cell-width($columns)
   $width: ($columns / 12) * 100%
-  width: calc(#{$width} - 1.25rem)
+  width: calc(#{$width} - (#{$cell-margin-small} * 2))
+  @media #{$medium}
+    width: calc(#{$width} - (#{$cell-margin-medium} * 2))
 
-$margin-width: 1.25 * 16px
-$price-width: 92px + $margin-width
-$remove-width: 16px + $margin-width
+$margin-width-small: ($cell-margin-small-unitless * 2) * 16px
+$margin-width-medium: ($cell-margin-medium-unitless * 2) * 16px
+$remove-width-small: 16px + $margin-width-small
+
+// COLUMN WIDTHS
 
 .cart__product-visual
   display: none
-  @media #{$tablet}
+  @media #{$medium}
     display: block
     +cell
     +cell-width(3)
 
 .cart__name
   +cell
-  width: calc(100% - #{$price-width} - #{$remove-width} - 1.25rem)
-  @media #{$tablet}
+  $price-remove-width-small: 92px - #{$margin-width-small} - #{$remove-width-small} - (#{$cell-margin-small} * 2)
+  width: calc(100% - #{$price-remove-width-small})
+  @media #{$medium}
     +cell-width(7)
 
 .cart__name--sidebar
-  width: calc(100% - #{$price-width} - 1.25rem)
+  $price-width-small: 92px - #{$margin-width-small} - (#{$cell-margin-small} * 2)
+  width: calc(100% - #{$price-width-small})
+  @media #{$medium}
+    $price-width-medium: 92px - #{$margin-width-medium} - (#{$cell-margin-medium} * 2)
+    width: calc(100% - #{$price-width-medium})
 
 .cart__price
   +cell
   width: 92px
-  @media #{$tablet}
+  @media #{$medium}
     +cell-width(3)
+
+.cart__price--sidebar
+  @media #{$medium}
+    width: 92px
 
 .cart__remove
   +cell
   width: 16px
-  @media #{$tablet}
+  @media #{$medium}
     +cell-width(2)
+
+// STYLING
+
 .cart
   margin-bottom: $more
 
@@ -54,7 +78,8 @@ $remove-width: 16px + $margin-width
     margin-bottom: 0
 
 .cart__product-visual
-  border: 1px solid $gray-200
+  img
+    border: 1px solid $gray-200
 
 .cart__name--product,
 .cart__price--product,
@@ -65,7 +90,7 @@ $remove-width: 16px + $margin-width
   line-height: 1.2
   @media #{$medium}
     font-size: $h5
-  &--sidebar
+  .cart__contents--sidebar &
     font-size: $h6
 
 .cart__name--product
@@ -74,8 +99,6 @@ $remove-width: 16px + $margin-width
     color: $qicq-dark-gray
   .color-size
     font-family: $subnav-ff
-  &--sidebar
-    margin-bottom: 4px
 
 .cart__name--cart-page
   .color-size
@@ -91,7 +114,7 @@ $remove-width: 16px + $margin-width
   margin-bottom: $half
   @media #{$medium}
     font-size: $h6
-  &--sidebar
+  .cart__contents--sidebar &
     font-size: $h7
 
 .cart__remove
@@ -141,7 +164,7 @@ $remove-width: 16px + $margin-width
 
 .cart__header--sidebar
   i
-    display: none  
+    display: none
 
 @media #{$small-only}
 
@@ -161,7 +184,7 @@ $remove-width: 16px + $margin-width
   .cart__header--sidebar
     border-radius: $border-radius $border-radius 0 0
 
-  .cart__contents--sidebar
+  .cart__contents--sidebar,
   .cart__empty--sidebar
     background-color: $white
 
