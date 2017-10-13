@@ -6,12 +6,12 @@ import validationMessages from '../data/coolblueValidationMessages';
 const renderField = ( { input, label, type, meta: { touched, error, warning, valid, pristine, submitFailed }, autocomplete, children } ) => {
   return (
       <div className="grid-x">
-        <div className="small-3 cell">
+        <div className="hide-for-small-only medium-3 cell">
           <label htmlFor={input.name}>{label}</label>
         </div>
-        <div className="small-8 cell">
+        <div className="small-11 medium-8 cell">
           {type != 'select'
-            ? <input {...input} type={type} className={valid && touched && !pristine ? 'is-valid-input' : ''} autoComplete={autocomplete} />
+            ? <input {...input} type={type} className={valid && touched && !pristine ? 'is-valid-input' : ''} autoComplete={autocomplete} placeholder={label} />
             : <select {...input} children={children} className="is-valid-input" autoComplete={autocomplete} />
           }
           {touched &&

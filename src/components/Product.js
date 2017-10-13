@@ -137,7 +137,7 @@ class Product extends Component {
           </div>
           <div className="small-12 medium-5 cell">
             <div className="product__price">{this.state.price.cformat()}</div>
-            <div className="product__options">
+            <div className="product__choices">
               <div className="product__color">
                 <h3 className="options__label">Kleuren:</h3>
                 <div className="button-group">
@@ -146,15 +146,12 @@ class Product extends Component {
               </div>
               <div className="product__frame-size">
                 <h3 className="options__label">Framemaat:</h3>
-                {/* <div className="grid-x grid-margin-x">
-                  {this.renderSizes()}
-                </div> */}
-                <div className="button-group">
-                  {this.renderSizes()}
-                </div>
+                {this.renderSizes()}
               </div>
-              <h3 className="options__label">Andere opties:</h3>
-              {this.renderOtherOptions()}
+              <div className="product__options">
+                <h3 className="options__label">Andere opties:</h3>
+                {this.renderOtherOptions()}
+              </div>
             </div>
             {product.colors[this.state.color] != undefined &&
               <AddToCart id={id} product={product.brand + ' ' + product.model + ' ' + product.type} image={product.colors[this.state.color].visual} color={product.colors[this.state.color].colorName} frameSize={this.state.frameSize} price={product.price} options={this.selectedOptions()} />

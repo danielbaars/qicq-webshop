@@ -1,17 +1,20 @@
 .product__summary,
 .product__price,
+.product__choices
+  margin-bottom: $more
+
 .product__options
-  margin-bottom: $default
+  margin-top: $half
 
 .product__summary
   font-size: $h7
-  @media #{$medium}
+  @media #{$large}
     font-size: $h6
 
 .product__visual
   border: 1px solid $gray-300
-  margin-bottom: $default
-  @media #{$medium}
+  margin-bottom: $more
+  @media #{$large}
     height: 312px
     img
       max-height: 100%
@@ -23,25 +26,27 @@
   color: $qicq-dark-gray
 
 .button--frame-size
-  .main
+  padding: 0.85em 0.7em
+  margin-right: $half
+  margin-bottom: $half
+  font-size: $h7
+  @media #{$large}
     font-size: $h6
-    @media #{$medium}
-      font-size: $h5
   .sub
     font-family: $subnav-ff
     display: block
     margin-top: $half
-    font-size: $h8
-    @media #{$medium}
-      font-size: $h7
+    font-size: 0.8em
 
 .product__checkbox
   margin-bottom: 0
 
 .options__label
-  // font-weight: bold
   font-size: $h6
 
-.product__order
-  .button
-    font-weight: bold
+.product__options-item
+  label
+    font-family: $subnav-ff
+    font-size: $h8
+    @media #{$large}
+      font-size: $h6

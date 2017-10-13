@@ -32,7 +32,7 @@ class ProductsOverviewPage extends Component {
     }
     return productsToDisplay.map(product => {
       return (
-        <div className='small-12 medium-4 large-4 cell' key={_.uniqueId()}>
+        <div className='small-12 medium-6 large-4 cell' key={_.uniqueId()}>
           <NavLink to={'/products/' + product.id} className='card overview__product'>
             <div className='card-divider overview__product-name'>{product.brand + ' ' + product.model + ' ' + product.type}</div>
             <div className='overview__product-visual'><img src={product.colors[Object.keys(product.colors)[0]].visual} /></div>

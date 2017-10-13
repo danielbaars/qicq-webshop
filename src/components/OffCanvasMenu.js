@@ -30,7 +30,7 @@ class MenuWrap extends Component {
 
 const OffCanvasMenu = props => {
   return (
-    <div id='outer-container' style={{height: '100%'}}>
+    <div class={props.mqClass} id='outer-container' style={{height: '100%'}}>
       <MenuWrap wait={20}>
         <Menu id='push' pageWrapId={'page-wrap'} outerContainerId={'outer-container'} isOpen={ false } width={ 200 }>
           <LinksList list={mastheadLinks[0]} listClasses='mobile-nav xlist' linkClass='ocm' />

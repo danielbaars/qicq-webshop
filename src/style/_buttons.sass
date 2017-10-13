@@ -1,10 +1,6 @@
 =button($bgc, $color: $white)
-  font-family: $nav-ff
-  letter-spacing: $nav-ls
   background-color: $bgc
   color: $color
-  border-radius: 5px
-  margin-bottom: 0
   &:hover
     background-color: darken($bgc, 10%)
     color: $color
@@ -34,6 +30,10 @@
       margin-right: 0
 
 .button
+  font-family: $nav-ff
+  letter-spacing: $nav-ls
+  border-radius: 5px
+  margin-bottom: 0
   &.selected
     +button($primary)
   &.not-selected
@@ -78,3 +78,8 @@
   &.chosen-color
     outline: 3px solid $primary
     border: 3px solid $white
+
+.button.large
+  font-size: 1rem
+  @media #{$medium}
+    font-size: 1.25rem

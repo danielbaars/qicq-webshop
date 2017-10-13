@@ -20,17 +20,17 @@ class App extends Component {
   }
   render() {
     return (
-        <OffCanvasMenu>
-          <Masthead />
-          <Switch>
-            <Route exact path='/' render={routeProps => <ProductsOverviewPage {...routeProps} data={this.props.data} />} />
-            <Route path='/products/:id' render={routeProps => <Product {...routeProps} data={this.props.data} />} />
-            <Route path='/form' component={CustomerInfoFormPage} />
-            <Route path='/cart' component={ShoppingCart} />
-            <Route component={NotFoundPage} />
-          </Switch>
-          <Footer />
-        </OffCanvasMenu>
+      <OffCanvasMenu>
+        <Masthead />
+        <Switch>
+          <Route exact path='/' render={routeProps => <ProductsOverviewPage {...routeProps} data={this.props.data} />} />
+          <Route path='/products/:id' render={routeProps => <Product {...routeProps} data={this.props.data} />} />
+          <Route path='/form' component={CustomerInfoFormPage} />
+          <Route path='/cart' component={ShoppingCart} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <Footer />
+      </OffCanvasMenu>
     );
   }
 }

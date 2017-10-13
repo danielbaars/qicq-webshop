@@ -5,6 +5,11 @@ body
   letter-spacing: $body-ls
   color: $qicq-light-gray
 
+a,
+input
+  &:focus
+    outline: none
+
 h1
   font-family: $header-ff
   color: $qicq-red
@@ -24,9 +29,10 @@ label
   font-size: $h3
   line-height: 0.9
   color: $qicq-dark-gray
-  margin-bottom: $default-margin
+  margin-bottom: $default
   @media #{$medium}
     text-align: left
     font-size: $h2
     line-height: 0.7
-    margin-bottom: $default-margin * 2
+  @media #{$large}
+    margin-bottom: $more

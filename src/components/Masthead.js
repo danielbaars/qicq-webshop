@@ -6,22 +6,6 @@ import Row from './Row';
 import LinksList from './LinksList';
 import mastheadLinks from '../data/mastheadLinks';
 
-const MastheadLinks = props => {
-  return (
-    <ul className='shop__nav xlist hlist'>
-      {_.map(props.list, link => {
-        return (
-          <li key={_.uniqueId('fl')}>
-            <a href={link.url} className={'nav__link nav__link--' + link.id}>
-              <span className="link__label">{link.label}</span><br/>
-              <span className="link__sublabel">{link.sublabel}</span>
-            </a>
-          </li>);
-      })}
-    </ul>
-  );
-};
-
 const Masthead = props => {
   return (
     <div className='masthead'>
@@ -33,11 +17,9 @@ const Masthead = props => {
             </NavLink>
           </div>
         </div>
-        <div className='hide-for-small-only medium-7 cell'>
+        <div className='hide-for-small-only medium-9 cell'>
           <LinksList list={mastheadLinks[0]} listClasses='shop__nav xlist hlist' linkClass='masthead' />
-        </div>
-        <div className='hide-for-small-only medium-2 cell'>
-          <NavLink to='/cart' className='nav__link nav__link--cart'><span className="link__label">Winkelmand</span><span className="cart__quantity">({props.cart.length})</span></NavLink>
+          <NavLink to='/cart' className='nav__link nav__link--masthead nav__link--cart'><span className="link__label">Winkelmand</span><span className="cart__quantity">({props.cart.length})</span></NavLink>
         </div>
       </Row>
     </div>

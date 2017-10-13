@@ -5,6 +5,11 @@ import { NavLink } from 'react-router-dom';
 import { removeProduct, removeOption, emptyCart } from '../actions/cartActions';
 import { bindActionCreators } from 'redux';
 
+import Responsive from 'react-responsive';
+
+const Small = ({ children }) => <Responsive maxWidth={639} children={children} />;
+const Medium = ({ children }) => <Responsive minWidth={640} children={children} />;
+
 import cformat from '../utils/euroFormat';
 
 const CartItem = props => {
@@ -17,6 +22,7 @@ const CartItem = props => {
   );
 };
 
+
 const CartItemColumns = props => {
   const product = props.type === 'product';
   const option = props.type === 'option';
@@ -25,53 +31,53 @@ const CartItemColumns = props => {
   const args = [props.index, props.i];
   return (
     <div className='grid-x grid-margin-x'>
-      <div className={(!sidebar ? 'small-12 medium-7' : 'small-12 medium-8') + ' cell'}>
-        <div className={`cart__${props.type}-name cart__${props.type}-name--${props.context}`}>
-          {{
-            product: <NavLink to={'/products/' + props.id}>{props.name} {sidebar && <span className='color-size'>({props.color}, {props.size}")</span>}</NavLink>,
-            option: <span>+ {props.name}</span>,
-            total: <span>{props.name}</span>
-          }[props.type]}
-        </div>
+      <div className={`cart__name cart__name--${props.type} cart__name--${props.context}`}>
+        {{
+          product: <NavLink to={'/products/' + props.id}>{props.name} <br/><span className='color-size'>({props.color}, {props.size}")</span></NavLink>,
+          option: <span>+ {props.name}</span>,
+          total: <span>{props.name}</span>
+        }[props.type]}
         {
           !sidebar &&
             product &&
-              <div className="product__choices">
+              <div className="cart__product-choices">
                 <div className='color'><span>Kleur:</span> {props.color}</div>
                 <div className='size'><span>Maat:</span> {props.size}"</div>
               </div>
         }
       </div>
-      <div className={(!sidebar ? 'small-12 medium-3' : 'small-12 medium-4') + ' cell'}>
-        <div className={`cart__${props.type}-price cart__${props.type}-price--${props.context}`}>{props.price.cformat()}</div>
+      <div className={`cart__price cart__price--${props.type} cart__price--${props.context}`}>
+        {props.price.cformat()}
       </div>
       {
         !sidebar &&
           !total &&
-            <div className='small-12 medium-2 cell'>
-              <a onClick={() => props.remove(...args)} className='cart__remove'>verwijder</a>
-            </div>
+              <a onClick={() => props.remove(...args)} className={`cart__remove cart__remove--${props.type}`}><i className='cart__remove__icon fa fa-minus-square'/><span className='cart__remove__text'>verwijder</span></a>
       }
     </div>
   );
 };
 
 class ShoppingCartContents extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      device: 'small'
+    }
+  }
   renderData() {
     const context = this.props.context;
     const sidebar = context === 'sidebar';
     return (
-      <div className={`cart__contents cart__contents--${context}`}>
+      <div className={`cart__contents cart__contents--${context}${sidebar ? ' card-section' : ''}`}>
         {this.props.contents.map((product, index) => {
           return (
             <CartItem key={_.uniqueId()}>
               {
                 !sidebar &&
-                  <div className='small-6 medium-3 cell'>
-                    <div className="cart__product-visual imgc"><NavLink to={'/products/' + product.id}><img src={product.image} /></NavLink></div>
-                  </div>
+                  <div className="cart__product-visual imgc"><NavLink to={'/products/' + product.id}><img src={product.image} /></NavLink></div>
               }
-              <div className={(!sidebar ? 'small-6 medium-9' : 'small-12') + ' cell'}>
+              <div className={(!sidebar ? 'small-12 medium-9' : 'small-12') + ' cell'}>
                 <CartItemColumns type='product' id={product.id} name={product.name} color={product.color} size={product.size} price={product.price} index={index} remove={this.props.removeProduct} context={context} />
                 {product.options.length > 0 &&
                   <div className='cart__options'>
@@ -85,7 +91,7 @@ class ShoppingCartContents extends Component {
           );
         })}
         <CartItem>
-          <div className={(!sidebar ? 'small-6 medium-9 medium-offset-3' : 'small-12') + ' cell'}>
+          <div className={(!sidebar ? 'small-12 medium-9 medium-offset-3' : 'small-12') + ' cell'}>
             <CartItemColumns type='total' name='Totaal' price={this.calculatePrice()} context={context} />
           </div>
         </CartItem>
@@ -103,9 +109,11 @@ class ShoppingCartContents extends Component {
     return flatArray.reduce( (total, num) => total + num);
   }
   render() {
+    const length = this.props.contents.length;
+    const cartNotEmpty = length > 0;
     return (
-      <div>
-        {this.props.contents.length > 0 ? this.renderData() : <div className='cart__empty'>Uw winkelmand is nog leeg...</div>}
+      <div className={this.props.cartOpen ? 'cart-open' : 'cart-closed'}>
+        {cartNotEmpty ? this.renderData() : <div className={`cart__empty cart__empty--${this.props.context} card-section`}>Uw winkelmand is nog leeg...</div>}
       </div>
     );
   }
