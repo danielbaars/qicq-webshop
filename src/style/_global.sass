@@ -25,14 +25,19 @@ label
   max-width: 64rem
 
 .page-title
+  $offset-small: 6px
+  $offset-medium: 8px
+  position: relative
+  top: -($offset-small)
   text-align: center
   font-size: $h3
-  line-height: 0.9
+  line-height: 1.1
   color: $qicq-dark-gray
-  margin-bottom: $default
+  margin-bottom: $half - $offset-small
   @media #{$medium}
+    top: -($offset-medium)
     text-align: left
     font-size: $h2
-    line-height: 0.7
+    margin-bottom: $less - $offset-medium
   @media #{$large}
-    margin-bottom: $more
+    margin-bottom: $default - $offset-medium

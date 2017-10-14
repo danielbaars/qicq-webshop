@@ -12,9 +12,7 @@ import ShoppingCartContents from './ShoppingCartContents';
 
 class ThankYouPage extends Component {
   render() {
-    const order = this.props.cartContents;
     const your = this.props.customerInfo;
-    console.log('props inside ThankYouPage:', this.props);
     return (
       <Content contentClass='thank-you-page'>
         <Row>
@@ -56,7 +54,6 @@ class ThankYouPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    cartContents: state.cartContents,
     customerInfo: state.customerInfo
   };
 };

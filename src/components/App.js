@@ -1,6 +1,4 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Switch } from 'react-router-dom';
 
@@ -36,9 +34,5 @@ class App extends Component {
     );
   }
 }
-
-// App.propTypes = {
-//   children: PropTypes.element
-// };
 
 export default App;

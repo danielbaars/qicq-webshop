@@ -1,9 +1,9 @@
 import React from 'react';
-import { Form, Field, reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 
 import validationMessages from '../data/coolblueValidationMessages';
 
-const renderField = ( { input, label, type, meta: { touched, error, warning, valid, pristine, submitFailed }, autocomplete, children } ) => {
+const renderField = ( { input, label, type, meta: { touched, error, valid, pristine, submitFailed }, autocomplete, children } ) => {
   return (
       <div className="grid-x">
         <div className="hide-for-small-only medium-3 cell">

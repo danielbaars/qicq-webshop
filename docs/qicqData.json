@@ -1,0 +1,126 @@
+{
+  "qicqBikes" : {
+    "stromer-st1-t" : {
+      "id" : "stromer-st1-t",
+      "brand" : "Stromer",
+      "model" : "ST1",
+      "type" : "t",
+      "summary" : "De stijlvolle Audi bruin gespoten ST1 speed pedelec biedt een bijzondere rij-ervaring dankzij de vernieuwende Speed Drive, ontwikkeld door Schlumpf.",
+      "price" : 3490,
+      "maxSpeed" : 45,
+      "colors" : {"audi-brown": {"colorName": "Audi bruin", "sizes": [20], "visual" : "https://static.webshopapp.com/shops/029847/files/042614420/stromer-stromer-st1-t.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st1-t.html"
+    },
+    "stromer-st2-s" : {
+      "id" : "stromer-st2-s",
+      "brand" : "Stromer",
+      "model" : "ST2",
+      "type" : "S",
+      "summary" : "De Stromer ST2, maar dan uitgebreid met een super sterke 983Wh accu. De eerste speed pedelec met elektrische schakelen, en een super krachtige lichtset en remlicht.",
+      "price" : 8990,
+      "maxSpeed" : 45,
+      "colors" : {"silver": {"colorName": "Zilver", "sizes": [17,20,22], "visual" : "https://static.webshopapp.com/shops/029847/files/044440544/stromer-stromer-st2-s.jpg"}, "green": {"colorName": "Groen", "sizes": [16], "visual" : "https://i.imgur.com/whIFTgi.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st2-s.html"
+    },
+    "stromer-st1-sport" : {
+      "id" : "stromer-st1-sport",
+      "brand" : "Stromer",
+      "model" : "ST1",
+      "type" : "sport",
+      "summary" : "Altijd al Stromer willen rijden, maar was het wat boven budget? Dan is dit je kans. Standaard met 522 wh accu, maar ook te upgraden naar 630 wh, zie bij andere opties",
+      "price" : 3190,
+      "maxSpeed" : 45,
+      "colors" : {"white": {"colorName": "Wit", "sizes": [16,20], "visual" : "https://static.webshopapp.com/shops/029847/files/120904379/stromer-stromer-st1-sport.jpg"}, "black": {"colorName": "Zwart", "sizes": [16,20], "visual" : "https://static.webshopapp.com/shops/029847/files/120904379/stromer-stromer-st1-sport.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st1-sport.html"
+    },
+    "stromer-st1-comfort" : {
+      "id" : "stromer-st1-comfort",
+      "brand" : "Stromer",
+      "model" : "ST1",
+      "type" : "comfort",
+      "summary" : "Altijd al Stromer willen rijden, maar was het wat boven budget? Dan is dit je kans. Standaard met 522 wh accu, maar ook te upgraden naar 630 wh, zie bij andere opties",
+      "price" : 3190,
+      "maxSpeed" : 45,
+      "colors" : {"white": {"colorName": "Wit", "sizes": [16], "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg"}, "black": {"colorName": "Zwart", "sizes": [16], "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st1-comfort.html"
+    },
+    "stromer-st1-comfort-25km" : {
+      "id" : "stromer-st1-comfort-25km",
+      "brand" : "Stromer",
+      "model" : "ST1",
+      "type" : "comfort 25 km",
+      "summary" : "Een heerlijke ebike die ondersteunt tot 25 km/uur. Deze ebike is geen helmplicht, en je hebt geen kentekenplaatje nodig.",
+      "price" : 2990,
+      "maxSpeed" : 25,
+      "colors" : {"white": {"colorName": "Wit", "sizes": [16], "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg"}, "black": {"colorName": "Zwart", "sizes": [16], "visual" : "https://static.webshopapp.com/shops/029847/files/010401710/stromer-stromer-st1-comfort.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st1-comfort-25-km.html"
+    },
+    "stromer-st2-sport" : {
+      "id" : "stromer-st2-sport",
+      "brand" : "Stromer",
+      "model" : "ST2",
+      "type" : "sport",
+      "summary" : "Droom jij ook al weg bij de gedachte van het hebben van een Stromer ST2? Ga voor design en Zwitserse degelijkheid. Deze speed pedelec is er voor jou en is future proof met geweldige handige en technische snufjes.",
+      "price" : 6030,
+      "maxSpeed" : 45,
+      "colors" : {"white": {"colorName": "Wit", "sizes": [17,20,22], "visual" : "https://static.webshopapp.com/shops/029847/files/046194138/stromer-stromer-st2-sport.jpg"}, "black": {"colorName": "Zwart", "sizes": [20,22], "visual" : "https://static.webshopapp.com/shops/029847/files/046194138/stromer-stromer-st2-sport.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st2-sport.html"
+    },
+    "stromer-st2-solar-impulse-ltd" : {
+      "id" : "stromer-st2-solar-impulse-ltd",
+      "brand" : "Stromer",
+      "model" : "ST2",
+      "type" : "Solar Impulse LTD",
+      "summary" : "Speed Pedelec. De Stromer ST2 Solar Impulse Limited edition 45km waar maar 399 modellen wereldwijd van zijn gemaakt.",
+      "price" : 6990,
+      "maxSpeed" : 45,
+      "colors" : {"silver": {"colorName": "Zilver", "sizes": [20], "visual" : "https://static.webshopapp.com/shops/029847/files/096074459/stromer-stromer-st2-solar-impulse-ltd.jpg"}},
+      "url" : "https://shop.qicq.nl/stromer-stromer-st2-solar-impulse.html"
+    }
+  },
+  "frameSizes" : {
+    "16" : {
+      "size" : 16.5,
+      "riderHeight" : "1,57m - 1,72m"
+    },
+    "17" : {
+      "size" : 17,
+      "riderHeight" : "1,67m - 1,82m"
+    },
+    "20" : {
+      "size" : 20,
+      "riderHeight" : "1,77m - 1,92m"
+    },
+    "22" : {
+      "size" : 22,
+      "riderHeight" : "1,87m - 2,02m"
+    }
+  },
+  "stromerOptions" : {
+    "seatPost" : {
+      "id" : "seatPost",
+      "name" : "Geveerde zadelpen",
+      "price" : 199
+    },
+    "frontSuspension" : {
+      "id" : "frontSuspension",
+      "name" : "Geveerde voorvork",
+      "price" : 560
+    },
+    "lock" : {
+      "id" : "lock",
+      "name" : "Abus ringslot",
+      "price" : 35
+    },
+    "licensePlate" : {
+      "id" : "licensePlate",
+      "name" : "RDW leges en kenteken",
+      "price" : 157.3
+    },
+    "winterTyres" : {
+      "id" : "winterTyres",
+      "name" : "Winterbanden",
+      "price" : 159.9
+    }
+  }
+}

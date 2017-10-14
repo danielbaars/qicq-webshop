@@ -1,7 +1,5 @@
 import React from 'react';
-import { Form, Field, reduxForm } from 'redux-form';
-
-import validationMessages from '../data/coolblueValidationMessages';
+import { Field, reduxForm } from 'redux-form';
 
 const FormRow = props => {
   return (
@@ -25,7 +23,6 @@ const renderField = ( { input, label, type } ) => {
 
 
 const DeliveryOptionsForm = (props) => {
-  // console.log('The props inside DeliveryOptionsForm are:', props);
   return (
     <div>
       <h1 className="order-step__header">

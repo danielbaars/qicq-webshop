@@ -74,14 +74,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_default.pug": {
-		"cOD": 1,
-		"ft": 512,
-		"oA": 1,
-		"oAP": "\/_default.html",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/_font-awesome.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -308,59 +300,15 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/order-form.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/order-form.html",
-		"oF": 0
-		},
-	"\/order-form.pug": {
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/order-form.html",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/postcss.config.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/postcss.config-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
-		},
-	"\/product.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/product.html",
-		"oF": 0
-		},
-	"\/product.pug": {
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/product.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/style.css.map": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/style.css.map",
-		"oF": 0
 		},
 	"\/style.sass": {
 		"aP": 0,
@@ -369,9 +317,9 @@
 		"dS": 0,
 		"ft": 2,
 		"ma": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/style.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		}

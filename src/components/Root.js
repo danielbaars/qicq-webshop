@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 
 import axios from 'axios';
-const DATA_URL = '../data/qicqData.json';
+// const DATA_URL = '../data/qicqData.json';
+const DATA_URL = 'https://raw.githubusercontent.com/danielbaars/qonqer-webshop/master/src/data/qicqData.json';
 
 export default class Root extends Component {
   constructor(props) {

@@ -1,7 +1,9 @@
 .product__summary,
 .product__price,
 .product__choices
-  margin-bottom: $more
+  margin-bottom: $default
+  @media #{$large}
+    margin-bottom: $more
 
 .product__options
   margin-top: $half
@@ -26,7 +28,7 @@
   color: $qicq-dark-gray
 
 .product__color
-  margin-bottom: $default  
+  margin-bottom: $default
 
 .button--frame-size
   padding: 0.85em 0.7em
