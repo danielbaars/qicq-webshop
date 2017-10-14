@@ -12,7 +12,7 @@ import customerInfoReducer from './reducers/customerInfoReducer';
 import './style/style.sass';
 require('./favicon.ico');
 
-const history = createHistory();
+const history = createHistory({basename: '/qonqer-webshop'});
 
 const middleware = routerMiddleware(history);
 
