@@ -9,6 +9,7 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
 import cartContentsReducer from './reducers/cartContentsReducer';
 import customerInfoReducer from './reducers/customerInfoReducer';
+import './style/foundation.css';
 import './style/style.sass';
 require('./favicon.ico');
 
