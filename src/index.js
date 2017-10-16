@@ -1,9 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
-import { Route } from 'react-router';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
@@ -11,10 +9,11 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
 import cartContentsReducer from './reducers/cartContentsReducer';
 import customerInfoReducer from './reducers/customerInfoReducer';
+import './style/foundation.css';
 import './style/style.sass';
 require('./favicon.ico');
 
-const history = createHistory();
+const history = createHistory({basename: '/qonqer-webshop'});
 
 const middleware = routerMiddleware(history);
 

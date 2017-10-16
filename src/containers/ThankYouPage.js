@@ -1,10 +1,5 @@
-// import _ from 'lodash';
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
-
-// import cformat from '../utils/euroFormat';
 
 import Content from '../components/Content';
 import Row from '../components/Row';
@@ -12,9 +7,7 @@ import ShoppingCartContents from './ShoppingCartContents';
 
 class ThankYouPage extends Component {
   render() {
-    const order = this.props.cartContents;
     const your = this.props.customerInfo;
-    console.log('props inside ThankYouPage:', this.props);
     return (
       <Content contentClass='thank-you-page'>
         <Row>
@@ -56,7 +49,6 @@ class ThankYouPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    cartContents: state.cartContents,
     customerInfo: state.customerInfo
   };
 };

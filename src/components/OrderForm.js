@@ -3,11 +3,9 @@ import Responsive from 'react-responsive';
 
 const Small = ({ children }) => <Responsive maxWidth={767} children={children} />;
 const Medium = ({ children }) => <Responsive minWidth={768} children={children} />;
-const Large = ({ children }) => <Responsive minWidth={1024} children={children} />;
 
 import Row from './Row';
 import CustomerInfoForm from '../containers/CustomerInfoForm';
-import DeliveryOptionsForm from '../containers/DeliveryOptionsForm';
 import ShoppingCartContents from '../containers/ShoppingCartContents';
 
 class OrderForm extends Component {
@@ -16,18 +14,18 @@ class OrderForm extends Component {
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.state = {
-      page: 1,
+      // page: 1,
       cartOpen: false
     }
   }
   nextPage() {
     this.setState({
-      page: this.state.page + 1
+      // page: this.state.page + 1
     });
   }
   previousPage() {
     this.setState({
-      page: this.state.page - 1
+      // page: this.state.page - 1
     });
   }
   toggleCart() {

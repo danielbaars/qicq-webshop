@@ -5,11 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { removeProduct, removeOption, emptyCart } from '../actions/cartActions';
 import { bindActionCreators } from 'redux';
 
-import Responsive from 'react-responsive';
-
-const Small = ({ children }) => <Responsive maxWidth={639} children={children} />;
-const Medium = ({ children }) => <Responsive minWidth={640} children={children} />;
-
 import cformat from '../utils/euroFormat';
 
 const CartItem = props => {
@@ -25,7 +20,6 @@ const CartItem = props => {
 
 const CartItemColumns = props => {
   const product = props.type === 'product';
-  const option = props.type === 'option';
   const total = props.type === 'total';
   const sidebar = props.context === 'sidebar';
   const thankYou = props.context === 'thank-you-page';

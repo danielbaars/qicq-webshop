@@ -13,7 +13,7 @@ const Masthead = props => {
         <div className='small-12 medium-3 cell'>
           <div className='masthead__logo'>
             <NavLink exact to='/' className='imgc'>
-              <img src='../img/qicq-logo.svg' />
+              <img src={require('../img/qicq-logo.svg')} />
             </NavLink>
           </div>
         </div>

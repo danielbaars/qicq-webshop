@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
+
+import ScrollToTop from './ScrollToTop';
 import App from './App';
 
 import axios from 'axios';
-const DATA_URL = '../data/qicqData.json';
+// const DATA_URL = '../data/qicqData.json';
+const DATA_URL = 'https://raw.githubusercontent.com/danielbaars/qonqer-webshop/master/src/data/qicqData.json';
 
 export default class Root extends Component {
   constructor(props) {
@@ -29,7 +31,9 @@ export default class Root extends Component {
       return (
         <Provider store={store}>
           <ConnectedRouter history={history}>
-            <App data={this.state.data} />
+            <ScrollToTop>
+              <App data={this.state.data} />
+            </ScrollToTop>
           </ConnectedRouter>
         </Provider>
       );
@@ -39,8 +43,3 @@ export default class Root extends Component {
 
   }
 }
-
-// Root.propTypes = {
-//   store: PropTypes.object.isRequired,
-//   history: PropTypes.object.isRequired
-// };
