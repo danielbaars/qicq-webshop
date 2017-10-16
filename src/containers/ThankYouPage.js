@@ -1,10 +1,5 @@
-// import _ from 'lodash';
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
-
-// import cformat from '../utils/euroFormat';
 
 import Content from '../components/Content';
 import Row from '../components/Row';

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
+
+import ScrollToTop from './ScrollToTop';
 import App from './App';
 
 import axios from 'axios';
@@ -29,7 +31,9 @@ export default class Root extends Component {
       return (
         <Provider store={store}>
           <ConnectedRouter history={history}>
-            <App data={this.state.data} />
+            <ScrollToTop>
+              <App data={this.state.data} />
+            </ScrollToTop>
           </ConnectedRouter>
         </Provider>
       );
