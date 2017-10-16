@@ -13,7 +13,7 @@ import './style/foundation.css';
 import './style/style.sass';
 require('./favicon.ico');
 
-const history = createHistory({basename: '/qonqer-webshop'});
+const history = createHistory({basename: '/qicq-webshop'});
 
 const middleware = routerMiddleware(history);
 
